@@ -1,6 +1,10 @@
-# Roteiro — Teaser Reels "Mude de perspectiva" (21s · 1080×1920 · 24fps)
+# Roteiro — Teaser Reels "Mude de perspectiva" (20.5s · 1080×1920 · 24fps · com áudio)
 
-Vídeo silencioso, com legenda embutida (captions-first). Todos os textos usam frases originais do book do UP Vilas. Ritmo calibrado para dar tempo confortável de leitura em cada cena (v2 — mais lento que a primeira versão).
+Vídeo com a locução `audio-fonte/up-vilas-locucao.mp3` sincronizada, legenda embutida na tela (captions-first, então continua 100% legível mesmo mudo). Todos os textos usam frases originais do book do UP Vilas. Ritmo calibrado para dar tempo confortável de leitura em cada cena.
+
+## Sobre a sincronização de áudio
+
+A locução enviada tem 20,506s — muito próxima da v2 do vídeo (21s). Rodei uma detecção de silêncio (`ffmpeg silencedetect`) no áudio para localizar as pausas de fala e recalibrei a duração de cada cena proporcionalmente para que o vídeo comece e termine exatamente junto com o áudio, mantendo o ritmo de leitura já validado. Não temos uma transcrição palavra-por-palavra da locução neste ambiente, então o encaixe é "por proporção + pausas maiores detectadas", não lip-sync exato — se algum corte específico não bater com a fala ao assistir, me diga o timestamp que eu ajusto manualmente aquele trecho.
 
 | Tempo | Cena | Tela | Observação |
 |---|---|---|---|
@@ -16,9 +20,9 @@ Marca d'água da Conceitto (canto inferior direito) presente do início ao fim d
 
 ## Especificações técnicas
 - Resolução: 1080×1920 (9:16, nativo Reels/Stories)
-- Duração: 21s
-- Codec: H.264 (yuv420p), sem faixa de áudio
+- Duração: 20.5s
+- Vídeo: H.264 (yuv420p) · Áudio: AAC 192kbps (locução fornecida)
 - Fonte: Playfair Display (headlines) + Montserrat (apoio/labels)
 
-## Se quiser evoluir para v2 com áudio/locução
-Sugestão de narração da Juli lendo o mesmo texto do vídeo (bate certinho nos tempos de corte acima), com trilha instrumental leve (piano/strings, sem letra) por baixo — mantém o tom editorial e não compete com a voz.
+## Próximo ajuste fino (se necessário)
+Se ao assistir algum corte de cena não bater exatamente com a locução, me passe o timestamp aproximado (ex: "aos 8s a cena devia mudar meio segundo antes") que eu recalibro só aquele trecho — o restante do vídeo já está pronto e não precisa ser re-renderizado inteiro.

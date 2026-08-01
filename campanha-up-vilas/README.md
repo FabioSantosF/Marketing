@@ -12,7 +12,7 @@ A Juli entra como o rosto humano da torre: ela some no fundo até o meio do víd
 
 | Peça | Arquivo | Formato | Uso |
 |---|---|---|---|
-| Vídeo teaser | `video/up-vilas-teaser-reels.mp4` | 1080×1920, 21s, MP4 (H.264) | Reels / Stories |
+| Vídeo teaser (com áudio) | `video/up-vilas-teaser-reels.mp4` | 1080×1920, 20.5s, MP4 (H.264 + AAC) | Reels / Stories |
 | Capa do Reels | `imagens/reels-cover.png` | 1080×1920 | Capa/thumbnail do Reels |
 | Post de feed | `imagens/feed-post.png` | 1080×1350 (4:5) | Feed |
 | Story 1 — Hook | `imagens/story-1-hook.png` | 1080×1920 | Stories (sequência, parte 1/3) |
@@ -54,6 +54,6 @@ Roteiro/storyboard cena a cena do vídeo: `video/roteiro.md`
 
 ## Próximos passos / limitações a saber
 
-- O vídeo é **silencioso por design** (captions-first). Se quiser adicionar trilha sonora e locução da Juli, posso preparar uma segunda versão com faixa de áudio licenciada — não gerei música/voz porque não tenho uma fonte de áudio licenciada disponível neste ambiente.
+- O vídeo agora tem a **locução enviada sincronizada** (áudio real, não gerado por IA), com o texto na tela mantido como legenda embutida (bom para quem assiste mudo). O encaixe do ritmo foi feito por detecção automática de pausas de fala + ajuste proporcional de duração — não é lip-sync palavra-por-palavra (não há transcrição da locução neste ambiente), então vale conferir se todos os cortes bateram certinho e avisar se algum precisar de ajuste fino.
 - As imagens/vídeo foram renderizadas em altíssima resolução (1080px de largura, nível profissional de nitidez), prontas para upload direto no Instagram, sem perda de qualidade.
 - Se quiser, posso gerar variações adicionais (ex: carrossel de plantas, stories extras destacando cada área de lazer, ou uma versão do vídeo com uma call-to-action diferente).
