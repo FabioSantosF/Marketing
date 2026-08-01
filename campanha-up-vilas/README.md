@@ -12,7 +12,7 @@ A Juli entra como o rosto humano da torre: ela some no fundo até o meio do víd
 
 | Peça | Arquivo | Formato | Uso |
 |---|---|---|---|
-| Vídeo teaser | `video/up-vilas-teaser-reels.mp4` | 1080×1920, 12s, MP4 (H.264) | Reels / Stories |
+| Vídeo teaser | `video/up-vilas-teaser-reels.mp4` | 1080×1920, 21s, MP4 (H.264) | Reels / Stories |
 | Capa do Reels | `imagens/reels-cover.png` | 1080×1920 | Capa/thumbnail do Reels |
 | Post de feed | `imagens/feed-post.png` | 1080×1350 (4:5) | Feed |
 | Story 1 — Hook | `imagens/story-1-hook.png` | 1080×1920 | Stories (sequência, parte 1/3) |
@@ -35,6 +35,13 @@ Roteiro/storyboard cena a cena do vídeo: `video/roteiro.md`
 1. **Reels** com `up-vilas-teaser-reels.mp4` + capa `reels-cover.png` definida manualmente no Instagram.
 2. **Stories** no dia seguinte: postar `story-1-hook.png` → `story-2-beneficios.png` → `story-3-cta.png` em sequência (a barra de progresso no topo já simula 3 partes). Ativar a sticker de enquete nativa do Instagram por cima do quadro "Sim ou sim?" do story 3 (deixei o espaço reservado).
 3. **Feed** com `feed-post.png`, legenda longa (ver arquivo de legendas) fixando as informações completas + CTA para o direct da Juli.
+
+## Ritmo do vídeo e encerramento (ajustes desta versão)
+
+- O vídeo foi desacelerado de 12s para **21s**: cada cena agora segura o texto na tela por mais tempo, dando espaço confortável de leitura antes do próximo corte.
+- O card final (o mais longo do vídeo, ~5.4s) agora traz, em sequência: nome do empreendimento **UP Vilas** + tagline → **logo da Conceitto Imóveis em destaque** (versão ampliada, não só a marca d'água) → canais de contato reais, revelados um a um: **@conceittoimoveis** (Instagram), **+55 71 98855-1313** (WhatsApp) e **conceittoimoveis.imb.br** (site).
+- A marca d'água da Conceitto no canto inferior direito passou a estar presente durante o vídeo inteiro (antes só aparecia como corte fixo).
+- O handle usado em todas as peças (stories, capa) foi corrigido para o perfil real: **@conceittoimoveis**.
 
 ## Dados reais usados (fonte: Drive do empreendimento)
 

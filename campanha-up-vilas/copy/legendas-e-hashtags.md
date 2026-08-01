@@ -8,9 +8,9 @@
 >
 > Quer saber mais? Manda um "UP" aqui no direct que eu te mostro tudo 👇
 >
-> #upvilas #laurodefreitas #miragem #imoveisbahia #apartamentocomvistamar #corretoradeimoveis #saudavelmentesalvador #salvadorbahia #investimentoimobiliario #apartamentonaufraga
-
-*(ajuste as últimas hashtags para as que a Juli já usa no perfil, para manter consistência de alcance)*
+> 📲 @conceittoimoveis · (71) 98855-1313 · conceittoimoveis.imb.br
+>
+> #upvilas #laurodefreitas #miragem #imoveisbahia #apartamentocomvistamar #corretoradeimoveis #conceittoimoveis #salvadorbahia #investimentoimobiliario
 
 ## Feed (`imagens/feed-post.png`)
 
@@ -25,9 +25,9 @@
 >
 > Rua Ana C. B. Dias, 528 — Miragem, Lauro de Freitas.
 >
-> Bora conversar? Chama a Juli no direct 💬
+> Bora conversar? Chama a Juli no direct 💬 @conceittoimoveis · (71) 98855-1313
 >
-> #upvilas #laurodefreitas #miragem #apartamentocomvistamar #imoveisdealtopadrao #corretoradeimoveis #salvadorbahia
+> #upvilas #laurodefreitas #miragem #apartamentocomvistamar #imoveisdealtopadrao #corretoradeimoveis #conceittoimoveis #salvadorbahia
 
 ## Stories (sequência 1→2→3)
 
@@ -35,10 +35,11 @@
 
 **Story 2 (benefícios):** poste puro. Se quiser, adicione o sticker de **localização** (Miragem, Lauro de Freitas) no topo.
 
-**Story 3 (CTA):** já tem o quadro reservado para a enquete. Substitua por um sticker nativo de **Enquete** do Instagram com a pergunta "Quer morar de frente pro mar? Sim / Sim 😉" na mesma posição, e ative o sticker de **link/DM** no botão dourado.
+**Story 3 (CTA):** já tem o quadro reservado para a enquete. Substitua por um sticker nativo de **Enquete** do Instagram com a pergunta "Quer morar de frente pro mar? Sim / Sim 😉" na mesma posição, e ative o sticker de **link/DM** no botão dourado. O rodapé do card já mostra o handle certo: **@conceittoimoveis**.
 
 ## Comentário fixado sugerido (pin no Reels/Feed)
 
 > 📍 Rua Ana C. B. Dias, 528 — Miragem, Lauro de Freitas
 > 💰 A partir de R$ 719.000 | 39 unidades | Torre única
-> 📩 Manda um direct que eu te passo a disponibilidade atualizada!
+> 📩 Chama no direct @conceittoimoveis ou no WhatsApp (71) 98855-1313 — te passo a disponibilidade atualizada!
+> 🔗 conceittoimoveis.imb.br
