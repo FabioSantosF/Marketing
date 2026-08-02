@@ -1,15 +1,31 @@
 # Legendas prontas — BLUE VILAS
 
-> ⚠️ Estas legendas usam **apenas informações confirmadas** na pasta do Drive do empreendimento
-> (nome, região, diferenciais de lazer, incorporadora). Preço, número de unidades, endereço
-> exato e contato/@ da corretora **não estavam disponíveis** na pasta e precisam ser
-> adicionados por você antes de publicar — os pontos marcados com `[PREENCHER]` indicam onde.
+> ⚠️ Faltam apenas dois dados que não constam no material oficial: **preço** e o **@/WhatsApp
+> pessoal da corretora**. Tudo o resto (endereço, metragens, tipologias, diferenciais, tagline)
+> vem direto da cartilha oficial do BLUE VILAS (DENA Realizações). Pontos marcados com
+> `[PREENCHER]` indicam onde completar antes de publicar.
+
+## Carrossel de feed (`imagens/carousel/01` a `08`)
+
+> Entre o céu e o mar. 🌊
+>
+> O BLUE VILAS chega em Vilas do Atlântico, a 250m da praia: apartamentos de 68 a 147m², com
+> opções de garden privativo ou cobertura, 2 ou 3 suítes.
+>
+> Lazer completo: salão de festas, lounge gourmet, espaço kids, espaço fitness e piscina infantil e adulto.
+>
+> 📍 R. Praia de Tambaú, 549 — Vilas do Atlântico, Lauro de Freitas/BA
+> 🌐 www.denarealizacoes.com
+>
+> Quer saber mais? Chama a corretora no direct 💬 [PREENCHER @ do Instagram / WhatsApp]
+>
+> #bluevilas #vilasdoatlantico #laurodefreitas #denarealizacoes #imoveisbahia #corretoradeimoveis #salvadorbahia #investimentoimobiliario #apartamentocomvistamar
 
 ## Reels (`video/blue-vilas-teaser-reels.mp4`)
 
 > Vilas do Atlântico muda de altura. 🌊
 >
-> O BLUE VILAS chega com um novo jeito de morar por lá: salão de festas, espaço kids, lounge gourmet e espaço fitness — lazer completo pra toda a família, assinado pela DENA Realizações.
+> O BLUE VILAS chega com um novo jeito de morar por lá: salão de festas, lounge gourmet, espaço kids, espaço fitness e piscina — a 250m da praia, assinado pela DENA Realizações.
 >
 > Quer ser a primeira a saber de tudo? Manda um "BLUE" aqui no direct 👇
 >
@@ -17,18 +33,21 @@
 >
 > #bluevilas #vilasdoatlantico #laurodefreitas #denarealizacoes #imoveisbahia #corretoradeimoveis #salvadorbahia #investimentoimobiliario
 
-## Feed (`imagens/feed-post.png`)
+## Feed — post único (`imagens/feed-post.png`)
 
 > Viver de frente pro Atlântico. 🌅
 >
-> O BLUE VILAS é o novo empreendimento da DENA Realizações em Vilas do Atlântico — pensado pra quem quer lazer completo sem sair de casa:
+> O BLUE VILAS é o novo empreendimento da DENA Realizações em Vilas do Atlântico, a 250m da praia — apartamentos de 68 a 147m², com opções de garden privativo ou cobertura:
 >
 > ✔️ Salão de festas
-> ✔️ Espaço kids
 > ✔️ Lounge gourmet
+> ✔️ Espaço kids
 > ✔️ Espaço fitness
+> ✔️ Piscina infantil e adulto
 >
-> [PREENCHER: valores, metragens e nº de unidades disponíveis]
+> [PREENCHER: valores por tipologia]
+>
+> 📍 R. Praia de Tambaú, 549 — Vilas do Atlântico, Lauro de Freitas/BA
 >
 > Bora conversar? Chama a corretora no direct 💬 [PREENCHER @ do Instagram / WhatsApp]
 >
@@ -38,16 +57,19 @@
 
 **Story 1 (hook):** poste puro — texto "Um novo jeito de morar em Vilas do Atlântico." já embutido. Ative o sticker de **link** ou **menção** apontando pro perfil/WhatsApp da corretora.
 
-**Story 2 (benefícios):** poste puro, lista os 4 diferenciais confirmados. Se quiser, adicione o sticker de **localização** "Vilas do Atlântico" no topo.
+**Story 2 (benefícios):** poste puro, lista os 5 diferenciais confirmados. Se quiser, adicione o sticker de **localização** "Vilas do Atlântico" no topo.
 
-**Story 3 (CTA):** já tem o quadro reservado para a enquete — substitua por um sticker nativo de **Enquete** do Instagram (ex: "Quer morar de frente pro mar? Sim / Sim 😉") na mesma posição, e ative o sticker de **link/DM**. Adicione o @ da corretora manualmente (o card não traz um @ porque não foi confirmado na pasta do Drive).
+**Story 3 (CTA):** já tem o quadro reservado para a enquete — substitua por um sticker nativo de **Enquete** do Instagram (ex: "Quer morar de frente pro mar? Sim / Sim 😉") na mesma posição, e ative o sticker de **link/DM**. Adicione o @ da corretora manualmente.
 
 ## Comentário fixado sugerido (pin no Reels/Feed)
 
-> 📍 Vilas do Atlântico — [PREENCHER endereço completo]
-> 💰 [PREENCHER faixa de preço e nº de unidades]
-> 📩 Chama no direct [PREENCHER @] ou WhatsApp [PREENCHER número] — te passo a disponibilidade atualizada!
+> 📍 R. Praia de Tambaú, 549 — Vilas do Atlântico, Lauro de Freitas/BA (250m da praia)
+> 📐 Apartamentos de 68 a 147m² · 2 ou 3 suítes · opções de garden privativo ou cobertura
+> 💰 [PREENCHER faixa de preço]
+> 📩 Chama no direct [PREENCHER @] ou WhatsApp [PREENCHER número]
+> 🌐 www.denarealizacoes.com
 
-## Observação sobre a foto da corretora
+## Sobre as imagens usadas
 
-A foto usada em todas as peças é a foto original enviada, **sem nenhuma alteração** (mesma roupa, mesmo enquadramento, mesmo rosto/pele/cabelo). Não foi feita nenhuma edição de vestuário ou de características físicas — este ambiente não tinha uma ferramenta de edição fotorrealista disponível para isso. Se quiser a foto com um look de corretora diferente, edite em um app com essa função (ex: Magic Edit do Canva) e reenvie a imagem para eu recompor as peças.
+- **Renders do empreendimento** (fachada, salão de festas, lounge gourmet, espaço kids, espaço fitness, piscina): recortados da cartilha oficial do BLUE VILAS que você enviou, sem nenhuma edição de conteúdo — só reenquadrados para o formato do Instagram e com uma camada de gradiente/texto no rodapé para a legenda.
+- **Foto da corretora**: usada exatamente como enviada — mesma roupa, mesmo rosto, pele, cabelo, olhos, nariz e boca, sem nenhum recorte ou edição de aparência. Este ambiente não tinha uma ferramenta de edição fotorrealista (troca de roupa por IA) disponível; por isso a foto real foi emoldurada em painéis de design ao invés de recortada/alterada. Se quiser a foto com um uniforme diferente, edite em um app com essa função (ex: Magic Edit do Canva) e reenvie a imagem.
