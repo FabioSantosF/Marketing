@@ -20,8 +20,19 @@ extraída diretamente do material oficial — não é uma paleta inventada.
 | Foto original da corretora | `imagens/corretora-original.jpg` | sem nenhuma edição |
 | Renders oficiais usados | `imagens/empreendimento/` | fonte, sem edição de conteúdo |
 | Logo extraído do material oficial | `imagens/logo-blue-vilas.png` | PNG transparente |
+| **Poster diagonal — feed** | `imagens/poster-vitrine.jpg` | 1080×1350 (4:5) |
+| **Poster diagonal — stories/reels** | `imagens/poster-vitrine-story.jpg` | 1080×1920 |
+| Foto da corretora com fundo removido | `imagens/corretora-sem-fundo.png` | PNG transparente |
+| Logo da Conceitto Imóveis (fundo removido) | `imagens/logo-conceitto.png` | PNG transparente |
 
 Legendas e hashtags: `copy/legendas-e-hashtags.md` · Roteiro do vídeo: `video/roteiro.md`
+
+### Novo design — poster diagonal (`poster-vitrine.jpg` / `poster-vitrine-story.jpg`)
+
+Layout diferente dos demais: painel azul diagonal com a mensagem à esquerda, foto do
+empreendimento ocupando o restante, e o recorte da corretora (fundo removido) "quebrando" a
+linha diagonal — com a logo da **Conceitto Imóveis** em destaque num card branco. Use como
+alternativa ao carrossel/feed-post para variar o formato no feed ou nos stories.
 
 ### Carrossel — ordem das 8 peças
 
@@ -53,11 +64,16 @@ Tudo o resto já está correto e em uso nas peças.
 
 ## Sobre a foto da corretora
 
-Foi usada exatamente como enviada — mesma roupa, mesmo rosto, pele, cabelo, olhos, nariz e
-boca, sem nenhum recorte ou edição de aparência. Este ambiente não tinha uma ferramenta de
-edição fotorrealista (troca de roupa por IA) disponível; por isso as peças usam a foto real,
-emoldurada em painéis de design ao invés de recortada. Se quiser a foto com uniforme de
-corretora, edite em um app com essa função (ex: Magic Edit do Canva) e reenvie a imagem.
+Rosto, pele, cabelo, olhos, nariz, boca e roupa continuam **exatamente como na foto original**
+— nenhum desses elementos foi alterado, editado ou gerado por IA. O que mudou no
+`corretora-sem-fundo.png` foi **só o fundo**, removido de forma automática (detecção do fundo
+cinza/branco do estúdio por análise de cor, não um modelo de IA generativa). É uma técnica de
+recorte, não de edição de aparência — a mesma lógica de tirar o fundo branco de uma foto de
+produto. A qualidade do recorte é boa, mas não perfeita: pode haver pequenas imperfeições na
+borda do cabelo/braço em alguns pontos; nada disso afeta rosto ou proporções do corpo. A foto
+original sem nenhum recorte continua disponível em `corretora-original.jpg` para quem preferir.
+Se quiser a roupa trocada por IA, esse tipo de edição segue exigindo uma ferramenta de edição
+fotorrealista que este ambiente não tem (ex: Magic Edit do Canva, usada manualmente).
 
 ## Como publicar (ordem sugerida)
 
