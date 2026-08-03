@@ -63,14 +63,14 @@ f_price = font("Bold", size=58)
 d.text((70, by+28), "A PARTIR DE", font=f_price_label, fill=GOLD)
 d.text((70, by+62), "R$ 638.800", font=f_price, fill=CREAM)
 d.text((70, by+134), "Financie até 100% pela Caixa · use o FGTS*", font=sans("Regular", 24), fill=MUTED)
+d.text((70, by+184), "Abrantes, ao lado do", font=sans("Medium", 20), fill=MUTED)
+d.text((70, by+210), "Villa Global Education", font=sans("SemiBold", 22), fill=CREAM_DIM)
 
-img = place_person(img, person, target_h=760, bottom_y=FEED_H+40, center_x=FEED_W*0.855)
+img = place_person(img, person, target_h=740, bottom_y=FEED_H+30, center_x=FEED_W*0.86)
 
 d = ImageDraw.Draw(img)
-d.line([(70, FEED_H-118), (FEED_W-70, FEED_H-118)], fill=(255,255,255,40), width=2)
-conceitto_wordmark(img, (70, FEED_H-96), scale=0.8)
-d.text((FEED_W-70, FEED_H-96), "Abrantes, ao lado do", font=sans("Medium", 20), fill=MUTED, anchor="ra")
-d.text((FEED_W-70, FEED_H-70), "Villa Global Education", font=sans("SemiBold", 22), fill=CREAM_DIM, anchor="ra")
+d.line([(70, FEED_H-96), (FEED_W-70, FEED_H-96)], fill=(255,255,255,40), width=2)
+conceitto_wordmark(img, (70, FEED_H-80), scale=0.75)
 
 save(img, f"{OUT}/feed-post.png")
 

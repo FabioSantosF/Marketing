@@ -232,7 +232,7 @@ def vignette(img):
 
 
 def load_person_cutout():
-    return Image.open("/home/user/Marketing/.assets/source/agente-cutout.png").convert("RGBA")
+    return Image.open("/home/user/Marketing/.assets/source/agente-blazer-cutout.png").convert("RGBA")
 
 
 def place_person(canvas, cutout, target_h, bottom_y, center_x, warm_grade=True, shadow=True):
