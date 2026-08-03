@@ -178,19 +178,27 @@ def house_icon(size=64, color=(224, 122, 42)):
     return im
 
 
-def conceitto_wordmark(draw_target, xy, scale=1.0):
-    """Reconstrói a marca Conceitto Imóveis (laranja + verde) como marca d'água."""
-    x, y = xy
-    icon = house_icon(int(46 * scale), color=(224, 122, 42))
-    draw_target.paste(icon, (int(x), int(y)), icon)
-    d = ImageDraw.Draw(draw_target)
-    f1 = sans("ExtraBold", int(30 * scale))
-    f2 = sans("Medium", int(20 * scale))
-    tx = x + int(54 * scale)
-    d.text((tx, y - int(4*scale)), "CONCEITTO", font=f1, fill=(224, 122, 42))
-    bbox = d.textbbox((0, 0), "CONCEITTO", font=f1)
-    d.text((tx, y + int(26 * scale)), "imóveis", font=f2, fill=(120, 178, 110))
-    return
+_logo_cache = {}
+
+def _conceitto_logo_img(variant="compact"):
+    if variant in _logo_cache:
+        return _logo_cache[variant]
+    path = f"/home/user/Marketing/.assets/source/conceitto-logo-{variant}.png" if variant != "full" \
+        else "/home/user/Marketing/.assets/source/conceitto-logo.png"
+    im = Image.open(path).convert("RGBA")
+    _logo_cache[variant] = im
+    return im
+
+
+def conceitto_wordmark(draw_target, xy, scale=1.0, target_h=90, variant="compact"):
+    """Marca oficial da Conceitto Imóveis (fornecida pelo cliente), usada como marca d'água."""
+    x, y = int(xy[0]), int(xy[1])
+    logo = _conceitto_logo_img(variant)
+    h = max(1, int(target_h * scale))
+    w = max(1, int(logo.width * (h / logo.height)))
+    logo_r = logo.resize((w, h), Image.LANCZOS)
+    draw_target.alpha_composite(logo_r, (x, y))
+    return w, h
 
 
 def green_home_logo(draw_target, xy, center=True, scale=1.0, color=CREAM, accent=GOLD):
