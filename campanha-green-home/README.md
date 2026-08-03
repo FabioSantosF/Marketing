@@ -50,9 +50,7 @@ Locução original (IA, PT-BR): `video/audio-fonte/green-home-locucao.mp3`
 
 ## Sobre a foto da consultora usada no vídeo e nos cards
 
-A foto que você enviou foi usada **sem qualquer alteração de rosto, pele, cor, cabelo, olhos, nariz ou boca**, exatamente como pedido — inclusive nas roupas: eu não apliquei uma troca de roupa gerada por IA. Este ambiente não tem uma ferramenta de edição fotorrealista (inpainting) capaz de substituir a peça de roupa numa foto real preservando a identidade da pessoa com segurança e qualidade profissional; uma tentativa "colada" à mão (recorte + roupa desenhada por cima) ficaria artificial e abaixo do padrão que a peça pede.
-
-Por isso segui a mesma solução já validada na campanha do UP Vilas com a mesma pessoa: foto 100% original (recortada do fundo original e reenquadrada), com o papel de corretora comunicado por crachá/selo — "Juli · Consultora Green Home" — e moldura editorial em harmonia com a paleta da marca. Se você tiver (ou puder tirar) uma foto em que ela já esteja vestindo o traje que imagina, eu recorto e componho do mesmo jeito, sem depender de geração de roupa por IA — o resultado fica mais confiável e mais bonito do que uma edição sintética.
+As peças usam a foto real da Juli de blazer/social que você enviou — **sem qualquer alteração de rosto, pele, cor, cabelo, olhos, nariz ou boca**, e também sem gerar roupa por IA: é a foto original dela mesma, só recortada do fundo e recomposta nas artes. Optei por essa foto (em vez da primeira, de blusa vermelha) por já trazer o visual de corretora de imóveis de alto padrão que você pediu, com qualidade totalmente fotográfica — sem depender de nenhuma edição sintética.
 
 ## Suposições que fiz (me avise se algo estiver errado)
 
