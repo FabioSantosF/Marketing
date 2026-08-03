@@ -127,7 +127,7 @@ img.alpha_composite(leaf_motif((W, H), color=GREEN, alpha=55, seed=21))
 header(img, 6)
 img = place_person(img, person, target_h=860, bottom_y=1180, center_x=W*0.5)
 d = ImageDraw.Draw(img)
-badge(img, (W/2-190, 1210), person, "ASSINATURA DE EXCELÊNCIA", "Juli · Consultora Green Home", scale=1.05)
+badge(img, (W/2-230, 1210), person, "ASSINATURA DE EXCELÊNCIA", "Julianne Costa · Consultora Green Home", scale=1.05)
 
 d.text((W/2, 1360), "Vem que eu te mostro", font=font("Bold", size=62), fill=CREAM, anchor="ma")
 d.text((W/2, 1428), "o Green Home.", font=font("Bold", italic=True, size=66), fill=GOLD, anchor="ma")

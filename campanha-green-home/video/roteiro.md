@@ -12,7 +12,7 @@ Locução gerada (voz feminina, PT-BR) sincronizada por detecção de pausas de 
 | 0:09.5–0:13.1 | 4 | Contador **0 → 175** + "CASAS EXCLUSIVAS · condomínio fechado · Abrantes" | "Cento e setenta e cinco casas exclusivas." |
 | 0:13.1–0:17.2 | 5 | Contador **0 → 3.700m²** + "DE ÁREA DE LAZER" | "Mais de três mil e setecentos metros quadrados de lazer." |
 | 0:17.2–0:23.8 | 6 | **"A PARTIR DE R$ 638.800"** + "financiado em até 100% pela Caixa · sem entrada · use o FGTS" | "A partir de seiscentos e trinta e oito mil reais, financiado em até cem por cento pela Caixa." |
-| 0:23.8–0:29.5 | 7 | **Card final** (5.7s, o mais longo de propósito): foto da Juli + crachá "Juli · Consultora Green Home" → "Vem que eu te mostro o Green Home." → botão "chama no direct" → logo Green Home + Conceitto Imóveis + contatos | "Eu sou a Juli. Vem que eu te mostro o Green Home. Chama aqui no direct!" |
+| 0:23.8–0:29.5 | 7 | **Card final** (5.7s, o mais longo de propósito): foto da Julianne + crachá "Julianne Costa · Consultora Green Home" → "Vem que eu te mostro o Green Home." → botão "chama no direct" → logo Green Home + Conceitto Imóveis + contatos | "Eu sou a Juli. Vem que eu te mostro o Green Home. Chama aqui no direct!" |
 
 ## Sobre a locução
 
@@ -34,4 +34,4 @@ A voz foi gerada via ElevenLabs (modelo multilíngue, PT-BR) a partir de um rote
 
 ## Sobre a foto da consultora usada no vídeo e nos cards
 
-O card final usa a foto real da Juli de blazer/social — **sem qualquer alteração de rosto, pele, cabelo, olhos, nariz ou boca** e sem geração de roupa por IA: é a foto original dela, apenas recortada do fundo e composta na arte. É a segunda foto que você enviou (a de blusa vermelha foi usada na campanha do UP Vilas); troquei para esta por já trazer o visual de corretora de alto padrão pedido, com qualidade 100% fotográfica.
+O card final usa a foto real da Julianne de blazer/social — **sem qualquer alteração de rosto, pele, cabelo, olhos, nariz ou boca** e sem geração de roupa por IA: é a foto original dela, apenas recortada do fundo e composta na arte. É a segunda foto que você enviou (a de blusa vermelha foi usada na campanha do UP Vilas); troquei para esta por já trazer o visual de corretora de alto padrão pedido, com qualidade 100% fotográfica.

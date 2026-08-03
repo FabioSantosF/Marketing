@@ -1,6 +1,6 @@
-# Campanha Instagram — Green Home (Juli, Consultora)
+# Campanha Instagram — Green Home (Julianne Costa, Consultora)
 
-Material de campanha para a Juli divulgar o **Green Home** (DENA Realizações) no Instagram — condomínio fechado com 175 casas exclusivas em Abrantes, Lauro de Freitas/BA. Peças produzidas a partir do book, cartilha e implantação do empreendimento (pasta do Drive), usando a foto real da Juli como fio condutor da campanha, no mesmo padrão visual/editorial da campanha do UP Vilas já publicada neste repositório.
+Material de campanha para a Julianne Costa ("Juli") divulgar o **Green Home** (DENA Realizações) no Instagram — condomínio fechado com 175 casas exclusivas em Abrantes, Lauro de Freitas/BA. Peças produzidas a partir do book, cartilha e implantação do empreendimento (pasta do Drive), usando a foto real dela como fio condutor da campanha, no mesmo padrão visual/editorial da campanha do UP Vilas já publicada neste repositório.
 
 ## Conceito criativo: "Onde a vida floresce"
 
@@ -54,7 +54,8 @@ As peças usam a foto real da Juli de blazer/social que você enviou — **sem q
 
 ## Suposições que fiz (me avise se algo estiver errado)
 
-- Reaproveitei o nome **"Juli"** e o contato da **Conceitto Imóveis** (@conceittoimoveis, (71) 98855-1313, conceittoimoveis.imb.br) usados na campanha do UP Vilas neste mesmo repositório, já que é a mesma foto/pessoa e não havia um contato específico do Green Home nos materiais do Drive. Se a Juli vende o Green Home por outra imobiliária, ou se o nome dela é outro, é só falar que eu ajusto todas as peças.
+- O crachá/assinatura usa o nome completo **Julianne Costa**; o restante das legendas mantém o apelido **"Juli"**, no tom mais pessoal de quem fala direto no Instagram.
+- Mantive o contato da **Conceitto Imóveis** (@conceittoimoveis, (71) 98855-1313, conceittoimoveis.imb.br) usado na campanha do UP Vilas neste mesmo repositório — confirmado que é o número certo.
 - Não encontrei um arquivo de logo oficial da Conceitto no Drive, então reconstruí a marca (ícone de casa + "CONCEITTO imóveis") a partir do padrão visual usado na campanha anterior. Se você tiver o arquivo de logo oficial, eu troco pela versão exata.
 
 ## Próximos passos / limitações a saber
