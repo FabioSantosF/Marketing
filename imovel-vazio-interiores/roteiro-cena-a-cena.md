@@ -34,7 +34,11 @@ Não mover, criar ou remover paredes · não alterar posição de portas, janela
 **Referência:** `frames-referencia/01-entrada.png`
 **Câmera:** mão abre a porta de entrada; enquadramento revela o corredor/sala ao fundo com janela iluminada.
 
-**Prompt da cena (EN):** Add a slim floating console table in light oak against the hallway wall just past the door, a round mirror with a thin brushed-brass frame above it, a woven jute doormat, and a single sculptural pendant light in the entry ceiling. Keep the corridor clear for walking.
+**Prompt da cena (EN) — versão padrão:** Add a slim floating console table in light oak against the hallway wall just past the door, a round mirror with a thin brushed-brass frame above it, a woven jute doormat, and a single sculptural pendant light in the entry ceiling. Keep the corridor clear for walking.
+
+**Prompt da cena (EN) — versão "continuidade com a sala" (17/08):** Use both attached images as reference: this door-opening photo, and the already-furnished living room photo. Show the same hand opening the same entry door, but make the space revealed beyond the doorway match the furnished living room exactly — same sand-tone linen 3-seat sofa with light-wood legs and solid-color cushions, same two boucle armchairs in warm taupe, same oval travertine coffee table, same natural-jute rug, same floating wood media console with one large abstract earth-toned canvas above it, same tall potted plant near the glass door, same sheer linen curtains, same warm LED ceiling cove lighting, same exterior view (neighboring houses and rooftops, no pool). Keep the door, door frame and hand from the entrance photo unchanged in the foreground.
+
+> ⚠️ Aviso: o corredor desse frame de entrada é estreito, com uma janela pequena ao fundo — não é literalmente a mesma geometria da sala ampla de vidro da Cena 2. Essa versão força continuidade visual por decisão criativa; a IA vai tomar liberdade com a arquitetura desse trecho específico para encaixar a sala ao fundo. Se preferir manter fidelidade estrita à arquitetura em vez de continuidade forçada, use a "versão padrão" acima.
 
 ## Cena 2 — Sala de estar integrada (≈0:03–0:08)
 **Referência:** `frames-referencia/02-sala-estar.png`
