@@ -40,21 +40,21 @@ Não mover, criar ou remover paredes · não alterar posição de portas, janela
 **Referência:** `frames-referencia/02-sala-estar.png`
 **Câmera:** avança para a sala; porta de vidro de correr ampla à esquerda leva à varanda.
 
-**Prompt da cena (EN):** Add a linen 3-seat sofa in sand tone with slim light-wood legs facing the glass sliding door, an oval travertine coffee table in front of it, two boucle armchairs in warm taupe forming a conversation area, a large natural-jute rug anchoring the seating group without blocking the path to the balcony door, a low floating wood media console with recessed TV niche on the side wall, one large abstract earth-toned canvas above the console, a tall potted plant (bird-of-paradise) near the glass door, sheer linen curtains framing the opening on a ceiling track without covering the glass. Recessed spots plus a warm LED cove line along the ceiling perimeter. Do not alter what is visible through the glass door: keep the exact same exterior view as the reference photo — neighboring houses and rooftops, street level — do not add a pool, landscaping, buildings or any element that is not in the reference image.
+**Prompt da cena (EN) — v3, 16/08:** Add a linen 3-seat sofa in sand tone with slim light-wood legs facing the glass sliding door, styled with solid-color cushions in tones that match the sofa (no patterned prints). In front of it, an oval travertine coffee table. Two boucle armchairs in warm taupe, both fully visible in frame, placed facing the sofa on either side of the coffee table to form a complete conversation area. A large natural-jute rug anchoring the seating group without blocking the path to the balcony door. A low floating wood media console with recessed TV niche on the side wall, with exactly one single large abstract earth-toned canvas above it — one big piece only, not a gallery wall or multiple small frames. A tall potted plant (bird-of-paradise) near the glass door. Sheer linen curtains framing the opening on a ceiling track without covering the glass. Recessed spots plus a warm LED cove line along the ceiling perimeter. Do not alter what is visible through the glass door: keep the exact same exterior view as the reference photo — neighboring houses and rooftops, street level — do not add a pool, landscaping, buildings or any element that is not in the reference image.
 
-> ⚠️ Testado em 15/08: a primeira geração desta cena adicionou uma piscina inexistente na vista externa. Se isso se repetir, reforce no prompt (ou em negative prompt, se a ferramenta tiver): "no swimming pool, no invented exterior elements, exterior view must match the reference photo exactly".
+> Histórico de ajustes: v1 (15/08) inventou uma piscina na vista externa → corrigido em v2 com a trava de vista. v2 acertou a vista mas trouxe só 1 poltrona em quadro, 2 quadros pequenos em vez de 1 grande, e almofadas estampadas → corrigido em v3 (acima). Se ainda vier errado, reforce em negative prompt: "no swimming pool, no invented exterior elements, no gallery wall, only one canvas, both armchairs fully in frame, solid-color cushions only".
 
 ## Cena 3 — Varanda da sala, vista rua (≈0:08–0:16)
 **Referência:** `frames-referencia/03-varanda-sala.png`
 **Câmera:** sai pela porta de vidro; guarda-corpo de vidro, vista para casas e rua abaixo.
 
-**Prompt da cena (EN):** Add a woven synthetic-rattan two-seat sofa with terracotta outdoor cushions along the side wall, a round teak side table, two potted tropical plants (areca palm, fern) framing the glass railing, a slim outdoor rug over the existing floor tile, and a discreet recessed ceiling spot plus one weatherproof pendant. Keep the glass railing and view fully unobstructed.
+**Prompt da cena (EN):** Add a woven synthetic-rattan two-seat sofa with terracotta outdoor cushions along the side wall, a round teak side table, two potted tropical plants (areca palm, fern) framing the glass railing, a slim outdoor rug over the existing floor tile, and a discreet recessed ceiling spot plus one weatherproof pendant. Keep the glass railing and view fully unobstructed. Do not alter the street/houses view beyond the railing — keep it exactly as in the reference photo, no invented pool, landscaping or buildings.
 
 ## Cena 4 — Varanda gourmet / serviço, parede de madeira (≈0:16–0:20)
 **Referência:** `frames-referencia/04-varanda-gourmet.png`
 **Câmera:** segunda área externa, parede revestida em ripado de madeira, guarda-corpo metálico; um trecho mostra o olhar de volta para a cozinha.
 
-**Prompt da cena (EN):** Add a built-in countertop with a small grill niche set flush against the existing wood-slat wall (do not cover the wood cladding), two backless wood counter stools, a slim floating wood shelf with a few ceramic decor pieces, and a single industrial-style pendant light above the counter. Keep the metal railing and the view clear.
+**Prompt da cena (EN):** Add a built-in countertop with a small grill niche set flush against the existing wood-slat wall (do not cover the wood cladding), two backless wood counter stools, a slim floating wood shelf with a few ceramic decor pieces, and a single industrial-style pendant light above the counter. Keep the metal railing and the view clear. Do not alter what is visible beyond the railing — keep it exactly as in the reference photo, no invented pool, landscaping or buildings.
 
 ## Cena 5 — Cozinha integrada (≈0:20–0:26)
 **Referência:** `frames-referencia/05-cozinha.png`
@@ -72,25 +72,25 @@ Não mover, criar ou remover paredes · não alterar posição de portas, janela
 **Referência:** `frames-referencia/07-suite1-quarto.png`
 **Câmera:** quarto com porta de vidro para uma pequena sacada.
 
-**Prompt da cena (EN):** Add a queen bed centered on the wall opposite the glass door, an upholstered linen headboard in warm taupe, two light-wood nightstands with fabric-shade table lamps, a soft area rug under the bed, layered blackout-plus-sheer curtains on the glass door track, and a woven bench at the foot of the bed. Warm indirect ceiling cove lighting.
+**Prompt da cena (EN):** Add a queen bed centered on the wall opposite the glass door, an upholstered linen headboard in warm taupe, two light-wood nightstands with fabric-shade table lamps, a soft area rug under the bed, layered blackout-plus-sheer curtains on the glass door track, and a woven bench at the foot of the bed. Warm indirect ceiling cove lighting. Do not alter what is visible through the glass door — keep the exact same exterior/balcony view as the reference photo, no invented pool, landscaping or buildings.
 
 ## Cena 8 — Banheiro da suíte 1 (≈0:32–0:36)
 **Referência:** `frames-referencia/08-suite1-banheiro.png`
 **Câmera:** bancada de granito já existente, vaso sanitário, box com vidro estreito e vista da sacada ao fundo.
 
-**Prompt da cena (EN):** Keep the existing granite vanity top and toilet position exactly as built. Add a rectangular vessel sink on the granite top, a large backlit LED mirror above it, matte-black fixtures, a small folded stack of neutral towels, and a single small potted fern on the counter. Keep the glass shower box and railing view unchanged.
+**Prompt da cena (EN):** Keep the existing granite vanity top and toilet position exactly as built. Add a rectangular vessel sink on the granite top, a large backlit LED mirror above it, matte-black fixtures, a small folded stack of neutral towels, and a single small potted fern on the counter. Keep the glass shower box and railing view unchanged — do not alter what is visible beyond it, no invented pool, landscaping or buildings.
 
 ## Cena 9 — Quarto 2, janela veneziana (≈0:36–0:46)
 **Referência:** `frames-referencia/09-quarto2.png`
 **Câmera:** segundo dormitório, janela estreita com veneziana.
 
-**Prompt da cena (EN):** Add a queen bed with a boucle-upholstered headboard in soft olive-green, two light-wood nightstands with sculptural table lamps, a reading armchair in the corner near the window, a jute-and-wool rug under the bed, and simple linen curtains flanking the narrow window. Recessed spots plus one ceiling pendant off to the side (not centered over the bed).
+**Prompt da cena (EN):** Add a queen bed with a boucle-upholstered headboard in soft olive-green, two light-wood nightstands with sculptural table lamps, a reading armchair in the corner near the window, a jute-and-wool rug under the bed, and simple linen curtains flanking the narrow window. Recessed spots plus one ceiling pendant off to the side (not centered over the bed). Do not alter what is visible through the window — keep the exact same exterior view as the reference photo, no invented pool, landscaping or buildings.
 
 ## Cena 10 — Quarto 3, sacada com brise (≈0:46–0:52)
 **Referência:** `frames-referencia/10-quarto3-sacada.png`
 **Câmera:** dormitório com porta de vidro para sacada estreita com brise horizontal.
 
-**Prompt da cena (EN):** Add a queen bed against the wall opposite the glass door, a light-wood slatted headboard, two floating nightstands, a woven pendant lamp beside the bed, sheer linen curtains on the glass door track, and a small potted plant just inside the glass door. Keep the brise-soleil slats and balcony view unobstructed.
+**Prompt da cena (EN):** Add a queen bed against the wall opposite the glass door, a light-wood slatted headboard, two floating nightstands, a woven pendant lamp beside the bed, sheer linen curtains on the glass door track, and a small potted plant just inside the glass door. Keep the brise-soleil slats and balcony view unobstructed — do not alter what is visible beyond them, no invented pool, landscaping or buildings.
 
 ## Cena 11 — Banheiro 2 / suíte, box + bancada (≈0:52–0:56)
 **Referência:** `frames-referencia/11-banheiro2.png`
@@ -102,7 +102,7 @@ Não mover, criar ou remover paredes · não alterar posição de portas, janela
 **Referência:** `frames-referencia/12-dormitorio-final.png`
 **Câmera:** cena final, ambiente amplo, porta ao fundo.
 
-**Prompt da cena (EN):** Add a king bed centered on the far wall as the room's focal point, a tall upholstered linen headboard, a bench at the foot of the bed, two substantial nightstands with ceramic table lamps, a large soft area rug, a floor-to-ceiling sheer curtain on the side window, and one large abstract canvas above the bed. Warm indirect ceiling cove lighting as the primary light source for a closing, inviting shot.
+**Prompt da cena (EN):** Add a king bed centered on the far wall as the room's focal point, a tall upholstered linen headboard, a bench at the foot of the bed, two substantial nightstands with ceramic table lamps, a large soft area rug, a floor-to-ceiling sheer curtain on the side window, and one large abstract canvas above the bed. Warm indirect ceiling cove lighting as the primary light source for a closing, inviting shot. Do not alter what is visible through the side window — keep the exact same exterior view as the reference photo, no invented pool, landscaping or buildings.
 
 ---
 
@@ -123,6 +123,8 @@ Não mover, criar ou remover paredes · não alterar posição de portas, janela
 | Banheiros (suítes) | Cuba | Louça branca de apoio sobre bancada de granito existente |
 | Banheiros (suítes) | Metais | Preto fosco |
 | Geral | Metais de destaque | Dourado escovado (lavabo, espelhos) — usar com moderação |
+| Geral | Almofadas | Sempre lisas/cor sólida, tom sobre tom com o estofado — evitar estampas |
+| Geral | Quadros/arte | Uma peça grande por parede de destaque — evitar "gallery wall" com várias peças pequenas, a menos que pedido |
 
 ## Paleta de cores
 `#F5F1EA` branco quente · `#D8CEBD` areia · `#A9A196` greige · `#C77B54` terracota suave · `#6B7A5E` verde-oliva (acento) · `#2B2B2B` preto fosco (metais)
