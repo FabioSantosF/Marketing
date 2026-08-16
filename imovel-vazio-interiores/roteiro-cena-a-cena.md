@@ -123,7 +123,11 @@ Não mover, criar ou remover paredes · não alterar posição de portas, janela
 **Referência:** `frames-referencia/11-banheiro2.png`
 **Câmera:** box de chuveiro embutido + bancada de granito com vaso sanitário.
 
-**Prompt da cena (EN):** Keep the existing shower box, granite vanity, and toilet position unchanged. Add a rectangular ceramic vessel sink, a slim vertical LED mirror, matte-black fixtures, and a folded stack of neutral towels on the counter edge.
+**Prompt da cena (EN) — v1, DESCARTADA:** ~~Keep the existing shower box, granite vanity, and toilet position unchanged (...)~~ → Testada em 17/08: a câmera saiu completamente diferente — virou uma composição frontal/centralizada, enquanto a referência é um ângulo oblíquo, visto através do vão da porta entreaberta.
+
+**Prompt da cena (EN) — v2, 17/08 — usar esta, só com `11-banheiro2.png` anexada:** This is a photo edit, not a new scene — do not straighten or center the composition. Keep the exact same oblique camera angle as the reference photo: viewed at a diagonal through the gap of the partially-open door, not a frontal symmetric view. Keep the wooden door, its lock and handle in the same position and size in the foreground on the right edge of frame. Keep the granite countertop receding away from camera at the same angle on the left, and the toilet in the same foreground position on the right. Do not change the camera position, height or field of view. Keep the existing shower box, granite vanity, and toilet position unchanged. Add a rectangular ceramic vessel sink on the granite counter, a slim vertical LED mirror above it, matte-black fixtures, and a folded stack of neutral towels on the counter edge. Negative prompt: [colar o negative prompt padrão do topo do documento].
+
+> Se ainda vier frontal/centralizada, tente regenerar 2-3x com o mesmo texto antes de reescrever (mesma dica que funcionou na Cena 5).
 
 ## Cena 12 — Dormitório final / suíte principal (≈0:56–0:58)
 **Referência:** `frames-referencia/12-dormitorio-final.png`
