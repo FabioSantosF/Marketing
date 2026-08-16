@@ -10,8 +10,8 @@ Não existe, neste ambiente de trabalho, uma ferramenta de geração de vídeo p
 
 | Arquivo | Conteúdo |
 |---|---|
-| `roteiro-cena-a-cena.md` | Roteiro completo: bloco de estilo global, regras de preservação da arquitetura, e prompt PT/EN pronto para cada um dos 12 ambientes identificados no vídeo, mais ficha de mobiliário para manter consistência entre cenas. |
-| `frames-referencia/` | 12 imagens extraídas do vídeo original, uma por ambiente, para usar como imagem de entrada em ferramentas de geração por IA (image-to-video) ou como referência para um render 3D. |
+| `roteiro-cena-a-cena.md` | Roteiro completo: bloco de estilo global, regras de preservação da arquitetura, e prompt PT/EN pronto para cada um dos ambientes identificados no vídeo (12 cenas principais + 2 cenas de conexão sala/cozinha), mais ficha de mobiliário para manter consistência entre cenas. Documenta também o histórico de ajustes de cada prompt (o que deu errado e como foi corrigido). |
+| `frames-referencia/` | 14 imagens extraídas do vídeo original — uma por ambiente, mais 2 ângulos que capturam sala e cozinha na mesma foto (mesmo ambiente integrado) — para usar como imagem de entrada em ferramentas de geração por IA (image-to-video) ou como referência para um render 3D. |
 
 ## Ambientes identificados no imóvel
 
