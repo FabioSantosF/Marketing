@@ -65,7 +65,13 @@ Essa marca está sobre uma área com textura (calçada de pedra) e a pessoa cami
 - **DaVinci Resolve** (Fusion → Object Removal / Magic Mask) — rastreia e reconstrói o fundo automaticamente, inclusive com movimento de câmera e do "objeto" (a marca é estática, mas o fundo atrás dela se move).
 - **After Effects** (Content-Aware Fill, com um track mask na área do logo) — mesma lógica, boa opção se já usam Adobe.
 
-Coordenada aproximada da área a mascarar (2160×3840): `x: 605–1469px, y: 2918–3494px` (bloco do logo + texto "VENDAS · LOCAÇÃO · ADM"). Ainda não confirmado: se a marca deve ser removida em **todas as cenas** em que aparece, ou se — como no vídeo do UP Vilas, onde a marca da Conceitto fica do início ao fim e em destaque no card final — vocês preferem **manter** aqui também como assinatura de marca.
+Coordenada aproximada da área a mascarar (2160×3840): `x: 605–1469px, y: 2918–3494px` (bloco do logo + texto "VENDAS · LOCAÇÃO · ADM").
+
+**Decisão do usuário:** tentar remover; só manter se a remoção comprometer a qualidade da imagem.
+
+Critério prático pra decidir qual caminho seguir, ao testar no Resolve/AE:
+- **Removeu limpo** (sem manchas, sem "respiração"/tremor no fundo reconstruído, sem artefato visível quando a pessoa passa perto/sobre a área) → segue removida, vídeo fica sem marca nessa cena.
+- **Ficou com artefato visível** (mancha, borrão, fundo "derretendo" quando ela caminha por cima da região) → **não force a remoção**. Faça como no vídeo do UP Vilas (commit `9b9b0cd`, mesmo projeto): não se tenta apagar a marca da filmagem bruta — em vez disso, aplica-se por cima um **logo limpo da Conceitto, recortado com fundo transparente, no canto inferior direito**, longe da pessoa e de qualquer área de textura complexa, como assinatura de marca deliberada (mesmo lugar/tratamento usado nas peças estáticas e no vídeo do UP Vilas). Isso evita tanto o artefato quanto o problema de deixar a marca original malposicionada.
 
 ### Nota à parte — artefato de movimento (não é marca d'água)
 No frame da caminhada, os braços/vestido da pessoa têm um rastro/"fantasma" (ghosting) — parece efeito de suavização de movimento (motion smoothing/frame interpolation) aplicado no corte, comum em apps como CapCut quando desaceleram um clipe. Isso não se resolve com grading; as opções são: (a) re-exportar esse clipe sem a interpolação/smooth motion ativada, ou (b) trocar por outro take da mesma cena sem o efeito.
