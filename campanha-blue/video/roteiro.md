@@ -117,6 +117,44 @@ ou pelo WhatsApp que está na tela, e agenda sua visita.
 - Metragem, nº de quartos/suítes e valor (se for divulgar) — dá pra encaixar uma frase extra no bloco 0:16–0:26 sem perder o timing
 - Diferenciais extras que apareçam em outras cenas do vídeo completo (só analisei 5 frames enviados; o vídeo tem 66s e pode ter mais ambientes que eu não vi)
 
+## 4. Pipeline de execução — passo a passo (para rodar localmente)
+
+Você decidiu rodar os comandos você mesmo. Sequência recomendada:
+
+### Passo 1 — Mapear os tempos das cenas
+Antes de aplicar o `delogo` do CapCut AI com tempo restrito (senão ele borra o canto superior esquerdo da cena externa, que tem coqueiro/estrutura de madeira ali). Gere um frame por segundo com o tempo marcado:
+```bash
+mkdir -p frames_mapa
+ffmpeg -i Blue_Final.mov -vf "fps=1,drawtext=text='%{pts\:hms}':x=10:y=10:fontsize=36:fontcolor=yellow:box=1:boxcolor=black@0.6" frames_mapa/f_%03d.png
+```
+Abra a pasta `frames_mapa` e anote: (a) em que segundo começa e termina cada cena de interior (onde aparece "CapCut AI"), e (b) em que segundo começa/termina a cena externa (onde aparece "CONCEITTO"). Substitua os placeholders `START_CAPCUT`/`END_CAPCUT` abaixo por esses valores (em segundos, ex: `7.5`).
+
+### Passo 2 — Grading + remoção do CapCut AI + conversão pra H.264 (tudo num comando)
+```bash
+ffmpeg -i Blue_Final.mov -vf "\
+delogo=x=0:y=0:w=320:h=230:show=0:enable='between(t,START_CAPCUT,END_CAPCUT)',\
+eq=contrast=1.08:saturation=1.10:brightness=0.01,\
+curves=preset=medium_contrast,\
+unsharp=5:5:0.6" \
+-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
+-c:a aac -b:a 192k \
+Blue_etapa1.mp4
+```
+Confira o resultado antes de seguir — se a caixa do `delogo` estiver deixando um "quadrado" visível ou desalinhado, reajuste `x/y/w/h` e rode de novo (é rápido, o arquivo já está bem menor em H.264).
+
+### Passo 3 — Marca d'água CONCEITTO (cena externa)
+Abra `Blue_etapa1.mp4` no DaVinci Resolve (ou After Effects). Aplique o Object Removal/Magic Mask (ou Content-Aware Fill) na área `x: 605–1469px, y: 2918–3494px` só durante a cena externa. Avalie pelo critério já definido na seção 2:
+- Ficou limpo → exporte assim.
+- Ficou com artefato → **não force**: desfaça a tentativa de remoção e, em vez disso, insira um logo limpo da Conceitto (fundo transparente) no canto inferior direito dessa cena, do mesmo jeito que foi feito no vídeo do UP Vilas. *Observação: não há um arquivo de logo Conceitto isolado neste repositório — a versão usada no UP Vilas foi aplicada direto nos binários (PNG/MP4), então você vai precisar do arquivo de logo original de vocês (ou recortar um trecho limpo de algum material antigo da marca) pra reaproveitar aqui.*
+
+### Passo 4 — Texto de compliance (imagens ilustrativas)
+Ainda no Resolve/AE, adicione o texto **"Imagem ilustrativa — decoração virtual"** sobreposto durante as cenas de interior (conforme a nota de compliance no topo deste arquivo).
+
+### Passo 5 — Exportação final
+Exporte em H.264, 2160×3840 (ou 1080×1920 se preferir arquivo mais leve — Instagram recomprime de qualquer forma), AAC 192kbps. Confira que o resultado ainda bate com os requisitos de Reels (duração ≤90s, 9:16, ≤4GB) — já validamos isso na análise técnica anterior.
+
+Qualquer travamento nesses passos (comando dando erro, coordenada errada, resultado estranho), me manda o print/print do erro que eu ajusto o comando.
+
 ## Especificações técnicas do arquivo de origem
 - Resolução: 2160×3840 (9:16, 4K vertical)
 - Codec: HEVC (H.265), yuv420p, 60fps — recomendado converter para H.264 antes de publicar (ver análise técnica anterior)
