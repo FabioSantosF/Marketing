@@ -65,14 +65,14 @@ Essa marca está sobre uma área com textura (calçada de pedra) e a pessoa cami
 - **DaVinci Resolve** (Fusion → Object Removal / Magic Mask) — rastreia e reconstrói o fundo automaticamente, inclusive com movimento de câmera e do "objeto" (a marca é estática, mas o fundo atrás dela se move).
 - **After Effects** (Content-Aware Fill, com um track mask na área do logo) — mesma lógica, boa opção se já usam Adobe.
 
-Coordenada aproximada da área a mascarar (2160×3840): `x: 605–1469px, y: 2918–3494px` (bloco do logo + texto "VENDAS · LOCAÇÃO · ADM"). Confirme se a marca deve ser removida em **todas as cenas** em que aparece a marca d'água da própria Conceitto ou se, como no vídeo do UP Vilas, vocês preferem **manter** a marca da Conceitto como assinatura de marca (lá ela fica do início ao fim + em destaque no card final) — pelo padrão que vejo no projeto anterior de vocês, a marca d'água da Conceitto costuma ficar visível de propósito.
+Coordenada aproximada da área a mascarar (2160×3840): `x: 605–1469px, y: 2918–3494px` (bloco do logo + texto "VENDAS · LOCAÇÃO · ADM"). Ainda não confirmado: se a marca deve ser removida em **todas as cenas** em que aparece, ou se — como no vídeo do UP Vilas, onde a marca da Conceitto fica do início ao fim e em destaque no card final — vocês preferem **manter** aqui também como assinatura de marca.
 
 ### Nota à parte — artefato de movimento (não é marca d'água)
 No frame da caminhada, os braços/vestido da pessoa têm um rastro/"fantasma" (ghosting) — parece efeito de suavização de movimento (motion smoothing/frame interpolation) aplicado no corte, comum em apps como CapCut quando desaceleram um clipe. Isso não se resolve com grading; as opções são: (a) re-exportar esse clipe sem a interpolação/smooth motion ativada, ou (b) trocar por outro take da mesma cena sem o efeito.
 
 ## 3. Roteiro falado (pronto para colar no ElevenLabs)
 
-Timing calibrado para os 65,97s do vídeo, no tom já estabelecido pela Conceitto (poético na abertura, direto nos diferenciais, CTA generoso no fechamento — mesmo padrão do roteiro do UP Vilas). **Campos entre `[colchetes]` precisam da sua confirmação** — usei como padrão os mesmos canais de contato e a mesma corretora (Juli) do UP Vilas, por serem da mesma imobiliária; me avise se for outro corretor ou outros dados para o Blue.
+Timing calibrado para os 65,97s do vídeo, no tom já estabelecido pela Conceitto (poético na abertura, direto nos diferenciais, CTA generoso no fechamento — mesmo padrão do roteiro do UP Vilas). Bairro e corretora confirmados pelo usuário: **Vilas do Atlântico, Lauro de Freitas** / **Juli**.
 
 ```
 [0:00–0:08] (cena externa — caminhada, coqueiros, mar ao fundo)
@@ -80,7 +80,7 @@ Tem gente que sonha acordado olhando pro mar.
 Aqui, você acorda dentro dele.
 
 [0:08–0:16] (transição para interior — sala)
-Bem-vindo ao Blue, em [bairro/cidade] — onde cada ambiente
+Bem-vindo ao Blue, em Vilas do Atlântico — onde cada ambiente
 foi pensado pra parecer um respiro.
 
 [0:16–0:26] (sala de estar)
@@ -101,17 +101,15 @@ que faz até o dia mais comum parecer especial.
 
 [0:54–0:66] (CTA / card final)
 O Blue é mais que um endereço — é um novo jeito de morar.
-Chama a [Juli] no direct @conceittoimoveis
+Chama a Juli no direct @conceittoimoveis
 ou pelo WhatsApp que está na tela, e agenda sua visita.
 ```
 
-**Contagem:** ~118 palavras / ritmo confortável (~1,8 palavras/s) para caber nos 66s com pausas respiráveis entre blocos — se quiser um ritmo mais econômico ou mais recheado de informação (metragem, valor, nº de quartos), me passe os dados que eu ajusto o texto sem perder o encaixe no tempo.
+**Contagem:** ~118 palavras / ritmo confortável (~1,8 palavras/s) para caber nos 66s com pausas respiráveis entre blocos.
 
-**Faltam para fechar 100% o roteiro:**
-- Bairro/cidade do Blue
-- Metragem, nº de quartos/suítes, valor (se for divulgar)
-- Confirmar corretor(a) responsável (assumi Juli/Conceitto, mesmo time do UP Vilas)
-- Diferenciais extras que apareçam em outras cenas do vídeo completo (só vi 5 frames, o vídeo tem 66s — pode ter mais ambientes)
+**Ainda em aberto, se quiser deixar o roteiro mais recheado:**
+- Metragem, nº de quartos/suítes e valor (se for divulgar) — dá pra encaixar uma frase extra no bloco 0:16–0:26 sem perder o timing
+- Diferenciais extras que apareçam em outras cenas do vídeo completo (só analisei 5 frames enviados; o vídeo tem 66s e pode ter mais ambientes que eu não vi)
 
 ## Especificações técnicas do arquivo de origem
 - Resolução: 2160×3840 (9:16, 4K vertical)
