@@ -4,7 +4,7 @@ Análise feita a partir de 5 frames enviados pelo usuário (não do arquivo `.mo
 
 ## ⚠️ Nota de compliance — confirmado pelo usuário
 
-As cenas de interior (sala, varanda gourmet, cozinha, banheiro) são **renderizações/decoração virtual gerada por IA** (marca "CapCut AI"), não fotos reais do imóvel no estado atual. Por isso é **obrigatório** avisar isso na peça, para não configurar publicidade enganosa (CDC / normas CRECI):
+As cenas de interior (sala, varanda gourmet, cozinha, banheiro) são **renderizações/decoração virtual gerada por IA** (marca "CapCut AI"), não fotos reais do imóvel no estado atual. Confirmado pelo mapeamento do `contact_sheet.png`: o bloco de interiores (~22s–63s) intercala essas cenas mobiliadas/render com cenas do imóvel **em obra/estado bruto** (concreto aparente, sem mobília) — ou seja, o próprio vídeo mostra lado a lado "como está hoje" e "como pode ficar decorado", o que reforça a obrigatoriedade do aviso. Por isso é **obrigatório** avisar isso na peça, para não configurar publicidade enganosa (CDC / normas CRECI):
 
 - Adicionar texto fixo no canto do vídeo durante as cenas de interior: **"Imagem ilustrativa — decoração virtual"** (fonte pequena, ~14-16px numa base 1080px, opacidade 80%, canto inferior).
 - Repetir o aviso na legenda do post (ver sugestão de legenda abaixo).
@@ -53,11 +53,16 @@ ffmpeg -i Blue_Final.mov -vf "delogo=x=0:y=0:w=320:h=230:show=0" -c:a copy Blue_
 ```
 Coordenadas de partida (estimadas para o frame 2160×3840 — ajustar ±20px olhando o preview): `x=0 y=0 w=320 h=230`.
 
-Se a marca só aparece em parte do vídeo (não do início ao fim), restrinja com `enable`:
+**Mapeamento real das cenas (feito a partir do `contact_sheet.png`, grade de 2s por célula):**
+- 0s–~20s: sequência externa (praia/coqueiros/restaurante) — marca **CONCEITTO**
+- ~20s–22s: transição
+- ~22s–63s: interiores — mistura de cenas **mobiliadas/render (marca CapCut AI)** com cenas **em obra/estado bruto (sem marca)**
+- ~64s+: card final com logo CONCEITTO (intencional, não mexer — ver seção 2.2)
+
+Restrinja o `delogo` do CapCut AI só ao bloco de interiores (aplicar num intervalo maior que o necessário não é problema aqui — nos trechos "em obra" sem marca, a caixa cai sobre parede/concreto liso, então o `delogo` não vai gerar artefato visível mesmo passando por cima):
 ```bash
-delogo=x=0:y=0:w=320:h=230:show=0:enable='between(t,7,44)'
+delogo=x=0:y=0:w=320:h=230:show=0:enable='between(t,21,63)'
 ```
-(troque `7,44` pelo intervalo real em segundos onde aparecem as cenas de interior — preciso que você me diga esses tempos, ou eu estimo olhando o vídeo completo se você conseguir enviar os cortes).
 
 ### CONCEITTO (parte inferior da cena externa) — mais delicada
 Essa marca está sobre uma área com textura (calçada de pedra) e a pessoa caminha perto dela em vários frames — um `delogo` simples vai borrar/manchar visivelmente porque a caixa muda de conteúdo a cada frame (a pessoa passa por cima/perto). Recomendo:
@@ -65,9 +70,9 @@ Essa marca está sobre uma área com textura (calçada de pedra) e a pessoa cami
 - **DaVinci Resolve** (Fusion → Object Removal / Magic Mask) — rastreia e reconstrói o fundo automaticamente, inclusive com movimento de câmera e do "objeto" (a marca é estática, mas o fundo atrás dela se move).
 - **After Effects** (Content-Aware Fill, com um track mask na área do logo) — mesma lógica, boa opção se já usam Adobe.
 
-Coordenada aproximada da área a mascarar (2160×3840): `x: 605–1469px, y: 2918–3494px` (bloco do logo + texto "VENDAS · LOCAÇÃO · ADM").
+Coordenada aproximada da área a mascarar (2160×3840): `x: 605–1469px, y: 2918–3494px` (bloco do logo + texto "VENDAS · LOCAÇÃO · ADM"). Aplicar **só no intervalo 0s–~20s** (sequência externa) — a marca também aparece no card final (~64s+), mas ali é o encerramento de marca intencional (mesmo padrão do UP Vilas) e **não deve ser mexida**.
 
-**Decisão do usuário:** tentar remover; só manter se a remoção comprometer a qualidade da imagem.
+**Decisão do usuário:** tentar remover (só no trecho 0–20s); só manter se a remoção comprometer a qualidade da imagem.
 
 Critério prático pra decidir qual caminho seguir, ao testar no Resolve/AE:
 - **Removeu limpo** (sem manchas, sem "respiração"/tremor no fundo reconstruído, sem artefato visível quando a pessoa passa perto/sobre a área) → segue removida, vídeo fica sem marca nessa cena.
@@ -119,20 +124,12 @@ ou pelo WhatsApp que está na tela, e agenda sua visita.
 
 ## 4. Pipeline de execução — passo a passo (para rodar localmente)
 
-Você decidiu rodar os comandos você mesmo. Sequência recomendada:
-
-### Passo 1 — Mapear os tempos das cenas
-Antes de aplicar o `delogo` do CapCut AI com tempo restrito (senão ele borra o canto superior esquerdo da cena externa, que tem coqueiro/estrutura de madeira ali). Gere um frame por segundo com o tempo marcado:
-```bash
-mkdir -p frames_mapa
-ffmpeg -i Blue_Final.mov -vf "fps=1,drawtext=text='%{pts\:hms}':x=10:y=10:fontsize=36:fontcolor=yellow:box=1:boxcolor=black@0.6" frames_mapa/f_%03d.png
-```
-Abra a pasta `frames_mapa` e anote: (a) em que segundo começa e termina cada cena de interior (onde aparece "CapCut AI"), e (b) em que segundo começa/termina a cena externa (onde aparece "CONCEITTO"). Substitua os placeholders `START_CAPCUT`/`END_CAPCUT` abaixo por esses valores (em segundos, ex: `7.5`).
+Você decidiu rodar os comandos você mesmo. **Passo 1 (mapear os tempos) já foi concluído** via `contact_sheet.png` — o mapeamento está na seção 2 acima (externa 0–20s / transição 20–22s / interiores 22–63s / card final 64s+). Segue a partir do Passo 2:
 
 ### Passo 2 — Grading + remoção do CapCut AI + conversão pra H.264 (tudo num comando)
 ```bash
 ffmpeg -i Blue_Final.mov -vf "\
-delogo=x=0:y=0:w=320:h=230:show=0:enable='between(t,START_CAPCUT,END_CAPCUT)',\
+delogo=x=0:y=0:w=320:h=230:show=0:enable='between(t,21,63)',\
 eq=contrast=1.08:saturation=1.10:brightness=0.01,\
 curves=preset=medium_contrast,\
 unsharp=5:5:0.6" \
@@ -142,8 +139,8 @@ Blue_etapa1.mp4
 ```
 Confira o resultado antes de seguir — se a caixa do `delogo` estiver deixando um "quadrado" visível ou desalinhado, reajuste `x/y/w/h` e rode de novo (é rápido, o arquivo já está bem menor em H.264).
 
-### Passo 3 — Marca d'água CONCEITTO (cena externa)
-Abra `Blue_etapa1.mp4` no DaVinci Resolve (ou After Effects). Aplique o Object Removal/Magic Mask (ou Content-Aware Fill) na área `x: 605–1469px, y: 2918–3494px` só durante a cena externa. Avalie pelo critério já definido na seção 2:
+### Passo 3 — Marca d'água CONCEITTO (cena externa, 0–20s apenas)
+Abra `Blue_etapa1.mp4` no DaVinci Resolve (ou After Effects). Aplique o Object Removal/Magic Mask (ou Content-Aware Fill) na área `x: 605–1469px, y: 2918–3494px`, **restrito ao intervalo 0–20s**. Não mexa no card final (~64s+) — aquele é o encerramento de marca intencional. Avalie pelo critério já definido na seção 2:
 - Ficou limpo → exporte assim.
 - Ficou com artefato → **não force**: desfaça a tentativa de remoção e, em vez disso, insira um logo limpo da Conceitto (fundo transparente) no canto inferior direito dessa cena, do mesmo jeito que foi feito no vídeo do UP Vilas. *Observação: não há um arquivo de logo Conceitto isolado neste repositório — a versão usada no UP Vilas foi aplicada direto nos binários (PNG/MP4), então você vai precisar do arquivo de logo original de vocês (ou recortar um trecho limpo de algum material antigo da marca) pra reaproveitar aqui.*
 
