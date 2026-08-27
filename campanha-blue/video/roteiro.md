@@ -126,7 +126,10 @@ ou pelo WhatsApp que está na tela, e agenda sua visita.
 
 Você decidiu rodar os comandos você mesmo. **Passo 1 (mapear os tempos) já foi concluído** via `contact_sheet.png` — o mapeamento está na seção 2 acima (externa 0–20s / transição 20–22s / interiores 22–63s / card final 64s+). Segue a partir do Passo 2:
 
-### Passo 2 — Grading + remoção do CapCut AI + conversão pra H.264 (tudo num comando)
+### Passo 2 — ✅ Concluído (`Blue_etapa1.mp4`)
+Grading aplicado, marca "CapCut AI" removida no bloco 21–63s, arquivo já convertido pra H.264. Conferido via `contact_sheet_v2.png`: cena externa e card final intactos, sem resíduo visível do delogo nos frames de baixa resolução — recomendado checar de perto em player (~24s, ~30s, ~48s, ~54s) antes de considerar definitivo.
+
+Comando usado:
 ```bash
 ffmpeg -i Blue_Final.mov -vf "\
 delogo=x=0:y=0:w=320:h=230:show=0:enable='between(t,21,63)',\
