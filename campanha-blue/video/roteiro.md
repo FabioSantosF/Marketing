@@ -70,13 +70,15 @@ Essa marca está sobre uma área com textura (calçada de pedra) e a pessoa cami
 - **DaVinci Resolve** (Fusion → Object Removal / Magic Mask) — rastreia e reconstrói o fundo automaticamente, inclusive com movimento de câmera e do "objeto" (a marca é estática, mas o fundo atrás dela se move).
 - **After Effects** (Content-Aware Fill, com um track mask na área do logo) — mesma lógica, boa opção se já usam Adobe.
 
-Coordenada aproximada da área a mascarar (2160×3840): `x: 605–1469px, y: 2918–3494px` (bloco do logo + texto "VENDAS · LOCAÇÃO · ADM"). Aplicar **só no intervalo 0s–~20s** (sequência externa) — a marca também aparece no card final (~64s+), mas ali é o encerramento de marca intencional (mesmo padrão do UP Vilas) e **não deve ser mexida**.
+Coordenada testada (2160×3840): `x=605 y=2918 w=864 h=576` (bloco do logo + texto "VENDAS · LOCAÇÃO · ADM"), sobre a mesa de madeira/mármore da cena do restaurante de praia (~t=5s).
 
-**Decisão do usuário:** tentar remover (só no trecho 0–20s); só manter se a remoção comprometer a qualidade da imagem.
+### ✅ Decisão final: marca CONCEITTO **mantida** na cena externa
 
-Critério prático pra decidir qual caminho seguir, ao testar no Resolve/AE:
-- **Removeu limpo** (sem manchas, sem "respiração"/tremor no fundo reconstruído, sem artefato visível quando a pessoa passa perto/sobre a área) → segue removida, vídeo fica sem marca nessa cena.
-- **Ficou com artefato visível** (mancha, borrão, fundo "derretendo" quando ela caminha por cima da região) → **não force a remoção**. Faça como no vídeo do UP Vilas (commit `9b9b0cd`, mesmo projeto): não se tenta apagar a marca da filmagem bruta — em vez disso, aplica-se por cima um **logo limpo da Conceitto, recortado com fundo transparente, no canto inferior direito**, longe da pessoa e de qualquer área de textura complexa, como assinatura de marca deliberada (mesmo lugar/tratamento usado nas peças estáticas e no vídeo do UP Vilas). Isso evita tanto o artefato quanto o problema de deixar a marca original malposicionada.
+Sem DaVinci Resolve/After Effects disponíveis, e sem um arquivo isolado do logo da Conceitto (fundo transparente) neste repositório pra reaplicar em outro canto, testamos a remoção via `ffmpeg delogo` diretamente (preview com `show=1` em `t=5s`, superfície lisa da mesa). Resultado: reconstrução com listras/borrão bem visível — não passa no critério de qualidade definido.
+
+**Conclusão (usuário validou o preview):** não forçar a remoção. A marca CONCEITTO permanece como está na cena externa (0–20s), do mesmo jeito que fica visível do início ao fim no vídeo do UP Vilas — funciona como assinatura de marca da imobiliária, e não como "erro" a ser corrigido.
+
+Com isso, **não há mais processamento pendente na cena externa** nem no card final — o `Blue_etapa1.mp4` já reflete o estado definitivo de watermark.
 
 ### Nota à parte — artefato de movimento (não é marca d'água)
 No frame da caminhada, os braços/vestido da pessoa têm um rastro/"fantasma" (ghosting) — parece efeito de suavização de movimento (motion smoothing/frame interpolation) aplicado no corte, comum em apps como CapCut quando desaceleram um clipe. Isso não se resolve com grading; as opções são: (a) re-exportar esse clipe sem a interpolação/smooth motion ativada, ou (b) trocar por outro take da mesma cena sem o efeito.
@@ -132,7 +134,7 @@ Grading aplicado, marca "CapCut AI" removida no bloco 21–63s, arquivo já conv
 Comando usado:
 ```bash
 ffmpeg -i Blue_Final.mov -vf "\
-delogo=x=0:y=0:w=320:h=230:show=0:enable='between(t,21,63)',\
+delogo=x=4:y=4:w=316:h=226:show=0:enable='between(t,21,63)',\
 eq=contrast=1.08:saturation=1.10:brightness=0.01,\
 curves=preset=medium_contrast,\
 unsharp=5:5:0.6" \
@@ -142,16 +144,14 @@ Blue_etapa1.mp4
 ```
 Confira o resultado antes de seguir — se a caixa do `delogo` estiver deixando um "quadrado" visível ou desalinhado, reajuste `x/y/w/h` e rode de novo (é rápido, o arquivo já está bem menor em H.264).
 
-### Passo 3 — Marca d'água CONCEITTO (cena externa, 0–20s apenas)
-Abra `Blue_etapa1.mp4` no DaVinci Resolve (ou After Effects). Aplique o Object Removal/Magic Mask (ou Content-Aware Fill) na área `x: 605–1469px, y: 2918–3494px`, **restrito ao intervalo 0–20s**. Não mexa no card final (~64s+) — aquele é o encerramento de marca intencional. Avalie pelo critério já definido na seção 2:
-- Ficou limpo → exporte assim.
-- Ficou com artefato → **não force**: desfaça a tentativa de remoção e, em vez disso, insira um logo limpo da Conceitto (fundo transparente) no canto inferior direito dessa cena, do mesmo jeito que foi feito no vídeo do UP Vilas. *Observação: não há um arquivo de logo Conceitto isolado neste repositório — a versão usada no UP Vilas foi aplicada direto nos binários (PNG/MP4), então você vai precisar do arquivo de logo original de vocês (ou recortar um trecho limpo de algum material antigo da marca) pra reaproveitar aqui.*
+### Passo 3 — ✅ Concluído (marca CONCEITTO mantida)
+Sem Resolve/AE instalados e sem logo isolado da Conceitto disponível, testamos remoção via `ffmpeg delogo` (preview `show=1` em t=5s, área `x=605 y=2918 w=864 h=576`). Resultado: reconstrução visivelmente borrada/com listras sobre a mesa lisa — não passou no critério de qualidade. **Decisão final: marca mantida como está** na cena externa (0–20s), mesma convenção do UP Vilas (assinatura de marca visível). Ver detalhes na seção 2.
 
-### Passo 4 — Texto de compliance (imagens ilustrativas)
-Ainda no Resolve/AE, adicione o texto **"Imagem ilustrativa — decoração virtual"** sobreposto durante as cenas de interior (conforme a nota de compliance no topo deste arquivo).
+### Passo 4 — Texto de compliance (imagens ilustrativas) — a cargo do usuário
+Inserir o texto **"Imagem ilustrativa — decoração virtual"** sobreposto durante o bloco de interiores (22–63s). Fica por conta do usuário adicionar (ferramenta de sua escolha).
 
 ### Passo 5 — Exportação final
-Exporte em H.264, 2160×3840 (ou 1080×1920 se preferir arquivo mais leve — Instagram recomprime de qualquer forma), AAC 192kbps. Confira que o resultado ainda bate com os requisitos de Reels (duração ≤90s, 9:16, ≤4GB) — já validamos isso na análise técnica anterior.
+`Blue_etapa1.mp4` já está em H.264, 2160×3840, AAC 192kbps — dentro dos requisitos de Reels (duração ≤90s, 9:16, ≤4GB) validados na análise técnica anterior. Depois de inserir o texto de compliance (Passo 4), o vídeo está pronto para publicar.
 
 Qualquer travamento nesses passos (comando dando erro, coordenada errada, resultado estranho), me manda o print/print do erro que eu ajusto o comando.
 
