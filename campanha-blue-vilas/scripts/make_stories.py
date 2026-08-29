@@ -1,5 +1,7 @@
 # Gera cards de Stories (1080x1920) a partir das fotos brutas selecionadas,
-# com color grading, copy sobreposta e a logo da Conceitto como marca d'água.
+# com color grading, copy sobreposta e a logo da Conceitto como marca d'água
+# (sem nenhuma UI falsa do Instagram — sem barra de progresso, handle ou
+# localização no topo: isso o próprio app já desenha por cima ao publicar).
 #
 # Como usar:
 #   1. pip install pillow
@@ -142,27 +144,15 @@ for i, card in enumerate(CARDS):
     im = grade(im)
     canvas = im.convert("RGBA")
 
-    grad = make_gradient(W, H, top_alpha=150, bottom_alpha=215, top_h=260, bottom_h=850)
+    # Apenas gradiente na base — sem barra de progresso, handle ou
+    # localização no topo: isso o próprio Instagram já desenha por cima
+    # (foto de perfil, @conta e stickers), então replicar aqui duplicava
+    # e ficava por cima da interface real ao publicar.
+    grad = make_gradient(W, H, top_alpha=0, bottom_alpha=215, top_h=0, bottom_h=850)
     canvas.alpha_composite(grad)
     draw = ImageDraw.Draw(canvas)
 
     margin = 40
-    gap = 10
-    seg_w = (W - 2 * margin - gap * (N - 1)) / N
-    for s in range(N):
-        x0 = margin + s * (seg_w + gap)
-        x1 = x0 + seg_w
-        color = (255, 255, 255, 235) if s <= i else (255, 255, 255, 90)
-        rounded_rect(draw, (x0, 54, x1, 60), radius=3, fill=color)
-
-    logo_h = 46
-    logo_small = logo.copy()
-    ratio = logo_h / logo_small.height
-    logo_small = logo_small.resize((int(logo_small.width * ratio), logo_h), Image.LANCZOS)
-    canvas.alpha_composite(logo_small, (margin, 84))
-    draw.text((margin + logo_small.width + 14, 84), "conceittoimoveis", font=f_bold(30), fill=WHITE)
-    draw_line_with_emoji(canvas, draw, (margin + logo_small.width + 14, 122), "📍 Blue Vilas", f_reg(24), (255, 255, 255, 220))
-
     ky = 1360 if card["focus"] == "top" else 1420
     draw.text((margin, ky), card["kicker"], font=f_bold(28), fill=GOLD)
 
@@ -202,6 +192,6 @@ for i, card in enumerate(CARDS):
         canvas.alpha_composite(lg, (int(cx0 + pad_l), int(cy0 + 8)))
         draw.text((cx0 + pad_l + lg.width + gap2, cy0 + chip_h / 2), label, font=lf, fill=(40, 90, 60), anchor="lm")
 
-    out_path = os.path.join(OUT, f"story-{i+1}-{os.path.splitext(card['photo'])[0]}.png")
-    canvas.convert("RGB").save(out_path, quality=95)
+    out_path = os.path.join(OUT, f"story-{i+1}-{os.path.splitext(card['photo'])[0]}.jpg")
+    canvas.convert("RGB").save(out_path, quality=92)
     print("saved", out_path)

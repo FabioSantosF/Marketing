@@ -167,6 +167,8 @@ Clean up this architectural floor plan graphic for a premium real-estate Instagr
 
 A partir da seleção da seção 3, gerei 5 cards finais em `stories/` (1080×1920, formato Stories/Reels), já com color grading aplicado, copy sobreposta e a logo da **Conceitto Imóveis** como marca d'água — prontos para postar em sequência.
 
+**Sem nenhuma UI falsa do Instagram**: a primeira versão simulava a barra de progresso, o `@conceittoimoveis` e a localização no topo, mas isso é exatamente o que o próprio app já desenha por cima ao publicar (foto de perfil, nome da conta, stickers) — então duplicava e ficava por cima da interface real. Os cards atuais só têm a foto tratada, a copy e a marca d'água — o resto o Instagram cuida sozinho.
+
 | Arquivo | Cena | Papel na sequência |
 |---|---|---|
 | `story-1-hook.jpg` | Retrato (IMG_9036) | **Hook** — abre a sequência, prende o olhar |
@@ -175,18 +177,16 @@ A partir da seleção da seção 3, gerei 5 cards finais em `stories/` (1080×19
 | `story-4-lazer.jpg` | Piscina (IMG_9061) | Diferencial 3 — lazer |
 | `story-5-cta.jpg` | Retrato varanda (IMG_8987) | **CTA** — fecha com convite direto |
 
-**Técnicas de engajamento aplicadas em cada card** (todas nativas do formato Stories, sem depender de sticker do app):
-- **Barra de progresso no topo** (5 segmentos) — sinaliza que é uma sequência e incentiva a pessoa a assistir até o fim, em vez de sair no primeiro card.
-- **Identificação de conta + localização** (`conceittoimoveis` + 📍 Blue Vilas) fixada em todo card — se alguém printar e reenviar por WhatsApp (comportamento comum em imóveis), a marca viaja junto.
+**Técnicas de engajamento aplicadas em cada card:**
 - **Kicker curto em caixa alta** (ex.: "LAZER", "NATUREZA") antes da frase — cria hierarquia de leitura rápida, essencial num formato que some em segundos.
 - **Frase de no máx. 2 linhas curtas** — Stories têm ~3-5s de atenção; textos longos derrubam a taxa de conclusão.
 - **Gradiente escuro só na base** — preserva a foto quase inteira visível (o que vende o imóvel) e garante contraste de leitura sem tarja sólida.
 - **Botão de CTA falso no último card** ("FALE COM A CONCEITTO") — deixa claro o próximo passo antes mesmo de a corretora colar o link/sticker de verdade por cima no app.
 - **Marca d'água em chip translúcido**, não em tarja opaca — mantém a logo sempre legível em qualquer foto sem tampar a cena.
 
-**Antes de postar, complete no próprio Instagram** (isso um card estático não faz sozinho):
+**Ao postar, use os recursos nativos do Instagram** (o card estático não faz isso sozinho):
 - Adicionar o **sticker de link** ("Fale com a gente") ou o **sticker de enquete/pergunta** por cima do card 5 — aumenta drasticamente o alcance por engajamento direto.
-- Adicionar o **sticker de localização** nativo (além do texto 📍 já no card) — o texto sozinho não conta para o algoritmo de local.
-- Publicar os 5 em sequência direta (não intercalar com outros stories) para a barra de progresso fazer sentido.
+- Adicionar o **sticker de localização** nativo "Blue Vilas" — só ele conta para o algoritmo de local (não dá pra simular isso no card).
+- Publicar os 5 em sequência direta, sem intercalar com outros stories, para funcionar como uma narrativa contínua.
 
 Script de geração: `scripts/make_stories.py` (Pillow) — reaproveitável para o lote completo de fotos quando o gestor validar esta direção.
