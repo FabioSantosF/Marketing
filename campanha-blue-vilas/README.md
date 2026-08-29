@@ -5,7 +5,7 @@ Tratamento de imagem e estratégia de conteúdo para transformar o book bruto da
 Fonte: pasta do Google Drive `29082026` (dentro de `Imóveis/Blue`) — [link original](https://drive.google.com/drive/folders/1oAO5lId36fTZ0zgGfVCcgOzUrnFTcPz8).
 Empreendimento: [Blue Vilas — DENA Realizações](https://www.denarealizacoes.com/bluevilas).
 
-> **Nota de acesso:** a página oficial do empreendimento está bloqueada para leitura automática neste ambiente (proxy de rede), então os dados técnicos (metragens, valores, nº de unidades) **não puderam ser confirmados na fonte** e foram deliberadamente **omitidos** dos textos abaixo para não inventar números. Toda a copy usa apenas o posicionamento já descrito no briefing (conforto, sofisticação, natureza, bem-estar à beira-mar). Antes de publicar, confirme com o cliente os dados técnicos reais, como foi feito na campanha UP Vilas (ver `campanha-up-vilas/README.md`).
+> **Nota de acesso:** a página oficial do empreendimento está bloqueada para leitura automática neste ambiente (proxy de rede). As metragens por tipologia foram confirmadas diretamente pelas plantas oficiais enviadas pelo gestor (seção 9) — mas **valores de venda e nº total de unidades ainda não foram confirmados** e seguem fora da copy para não inventar números. Antes de publicar, confirme esses dados restantes com o cliente, como foi feito na campanha UP Vilas (ver `campanha-up-vilas/README.md`).
 
 ---
 
@@ -134,3 +134,29 @@ Generate a synthetic botanical detail shot in the campaign's editorial style: a 
 - Confirmar com o gestor se **IMG_9030.JPG** é do Blue Vilas antes de descartá-la definitivamente.
 - Agendar captura de **vista mar / pôr do sol / interior decorado** — ausentes neste lote e centrais ao posicionamento "à beira-mar".
 - Se aprovado o direcionamento, os prompts acima estão prontos para uso em Midjourney/DALL·E ou em ferramentas de retoque (Photoshop generative fill) — posso também gerar as versões renderizadas de 1–2 destas imagens como prova de conceito antes do lote completo, caso queira validar o estilo primeiro.
+
+---
+
+## 9. Plantas e metragens confirmadas
+
+O gestor enviou as plantas oficiais das 3 tipologias do empreendimento (salvas em `plantas/`). O material já vem com a identidade visual da marca (faixa azul + abas douradas), então a base gráfica pode ser reaproveitada como está — só precisa de higienização de composição para virar peça de carrossel de Feed, e não "print de corretora".
+
+> **Divergência a confirmar:** a mensagem que acompanhou os arquivos citava "TIPO GARDEN II", mas as 3 imagens recebidas mostram as mesmas 3 abas — **TIPO GARDEN I, TIPO I e TIPO II** — sem nenhuma tela de "Garden II". Se existir de fato uma 4ª tipologia, falta o arquivo dela.
+
+| Tipologia | Suíte Master | Suíte II | Sala Integrada | Varanda Gourmet | Lavabo | Banheiros (Master / Suíte II) | Área Técnica | Jardim privativo |
+|---|---|---|---|---|---|---|---|---|
+| **Garden I** (térreo, com jardim) | 16,1 m² | 9,1 m² | 23,8 m² | 13,0 m² | 1,5 m² | 3,3 m² / 3,3 m² | 1,1 m² | **48,06 m²** (deck + gramado + espreguiçadeiras) |
+| **Tipo I** (andar-tipo, sem jardim) | 16,1 m² | 9,1 m² | 23,8 m² | 13,0 m² | 1,5 m² | 3,3 m² / 3,3 m² | 1,1 m² | — |
+| **Tipo II** (planta alternativa) | 14,0 m² | 9,4 m² | **29,8 m²** | 13,7 m² | 1,5 m² | 3,2 m² / 3,2 m² | 1,7 m² | — |
+
+Leitura rápida para a copy: **Garden I** é a tipologia "casa com quintal" (jardim privativo de 48 m², melhor para família/pet); **Tipo I** é o mesmo layout em andar alto (melhor para quem quer varanda com vista); **Tipo II** troca metragem de quarto por uma sala 25% maior (23,8 → 29,8 m²) — ótimo ângulo para "vida social em casa".
+
+**Prompt Técnico (tratamento das 3 peças de planta, mesmo grid para as três):**
+```
+Clean up this architectural floor plan graphic for a premium real-estate Instagram carousel: keep the existing brand navy-blue header band and gold/blue pill tabs exactly as designed, sharpen the top-down furniture render lines, unify the wood, marble and fabric textures to warmer tones matching a gold + turquoise + white brand palette, add soft drop-shadow depth so the plan reads as a premium 3D isometric render rather than a flat blueprint, keep all room labels and square-meter callouts fully legible, crop to a clean 4:5 vertical card with even white margin, no watermark clutter --ar 4:5
+```
+
+**Sugestões de copy para o carrossel de plantas:**
+- Garden I: "Sua casa, seu quintal. 48 m² de jardim só seus. 🌿"
+- Tipo I: "Mesmo conforto, com a cidade e o mar aos seus pés."
+- Tipo II: "Uma sala de 29,8 m² pensada pra reunir quem você ama."
