@@ -135,6 +135,19 @@ CARDS = [
          sub=None, focus="center"),
     dict(photo="IMG_8987.JPG", kicker="VEM CONHECER", headline="O sorriso de quem já\nencontrou o lugar certo.",
          sub="Manda um oi no direct 💬", cta="FALE COM A CONCEITTO", focus="top"),
+    # Lote 2 — resto das fotos boas da visita (ver README seção 11)
+    dict(photo="IMG_9048.JPG", kicker="BLUE VILAS", headline="Chegou. E é exatamente\ncomo você imaginou.",
+         sub=None, focus="center"),
+    dict(photo="IMG_8965.JPG", kicker="VISTA MAR", headline="Sim, dá pra ver o mar\nlá de cima. 🌊",
+         sub=None, focus="top"),
+    dict(photo="IMG_8955.JPG", kicker="VARANDA", headline="Da sua varanda, o dia\njá começa bem.",
+         sub=None, focus="top"),
+    dict(photo="IMG_8991.JPG", kicker="ESPAÇO COMUM", headline="Um cantinho pra tudo:\ntrabalhar, receber, viver.",
+         sub=None, focus="center"),
+    dict(photo="IMG_9015.JPG", kicker="ACADEMIA", headline="Treino sem sair\nde casa.",
+         sub=None, focus="center"),
+    dict(photo="IMG_9051.JPG", kicker="LAZER", headline="Sua tarde de descanso\ncomeça bem aqui.",
+         sub="Manda um oi no direct 💬", cta="FALE COM A CONCEITTO", focus="center"),
 ]
 N = len(CARDS)
 

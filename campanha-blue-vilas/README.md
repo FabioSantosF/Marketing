@@ -165,7 +165,7 @@ Clean up this architectural floor plan graphic for a premium real-estate Instagr
 
 ## 10. Cards prontos para Stories (com marca d'água Conceitto)
 
-A partir da seleção da seção 3, gerei 5 cards finais em `stories/` (1080×1920, formato Stories/Reels), já com color grading aplicado, copy sobreposta e a logo da **Conceitto Imóveis** como marca d'água — prontos para postar em sequência.
+A partir da seleção da seção 3, gerei cards finais em `stories/` (1080×1920, formato Stories/Reels), já com color grading aplicado, copy sobreposta e a logo da **Conceitto Imóveis** como marca d'água — prontos para postar em sequência. O lote 1 (5 cards) já estava aprovado; o lote 2 (6 cards) veio da auditoria completa do restante das fotos da visita (seção 11).
 
 **Sem nenhuma UI falsa do Instagram**: a primeira versão simulava a barra de progresso, o `@conceittoimoveis` e a localização no topo, mas isso é exatamente o que o próprio app já desenha por cima ao publicar (foto de perfil, nome da conta, stickers) — então duplicava e ficava por cima da interface real. Os cards atuais só têm a foto tratada, a copy e a marca d'água — o resto o Instagram cuida sozinho.
 
@@ -176,6 +176,12 @@ A partir da seleção da seção 3, gerei 5 cards finais em `stories/` (1080×19
 | `story-3-natureza.jpg` | Folhagem + piscina (IMG_9034) | Diferencial 2 — natureza |
 | `story-4-lazer.jpg` | Piscina (IMG_9061) | Diferencial 3 — lazer |
 | `story-5-cta.jpg` | Retrato varanda (IMG_8987) | **CTA** — fecha com convite direto |
+| `story-6-chegada.jpg` | Pessoa + fachada + piscina (IMG_9048) | Establishing shot — "chegada" ao condomínio |
+| `story-7-vista-mar.jpg` | Vista do mar entre coqueiros (IMG_8965) | Diferencial 4 — vista mar (não existia no lote 1) |
+| `story-8-varanda.jpg` | Vista da varanda (IMG_8955) | Diferencial 5 — varanda ⚠️ ver nota na seção 11 |
+| `story-9-espaco-comum.jpg` | Lounge/coworking (IMG_8991) | Diferencial 6 — espaço comum |
+| `story-10-academia.jpg` | Academia equipada (IMG_9015) | Diferencial 7 — academia |
+| `story-11-lazer-cta.jpg` | Piscina + espreguiçadeira (IMG_9051) | **CTA 2** — fecha o lote 2 ⚠️ ver nota na seção 11 |
 
 **Técnicas de engajamento aplicadas em cada card:**
 - **Kicker curto em caixa alta** (ex.: "LAZER", "NATUREZA") antes da frase — cria hierarquia de leitura rápida, essencial num formato que some em segundos.
@@ -189,4 +195,43 @@ A partir da seleção da seção 3, gerei 5 cards finais em `stories/` (1080×19
 - Adicionar o **sticker de localização** nativo "Blue Vilas" — só ele conta para o algoritmo de local (não dá pra simular isso no card).
 - Publicar os 5 em sequência direta, sem intercalar com outros stories, para funcionar como uma narrativa contínua.
 
-Script de geração: `scripts/make_stories.py` (Pillow) — reaproveitável para o lote completo de fotos quando o gestor validar esta direção.
+Script de geração: `scripts/make_stories.py` (Pillow).
+
+---
+
+## 11. Auditoria completa do lote (as 43 fotos)
+
+A pedido do gestor, abri e avaliei individualmente **todas as 43 fotos** da pasta (31 RAW + 12 JPG — os 22 vídeos `.MOV` continuam fora de escopo, ver seção 6). Resultado:
+
+### Entraram como cards novos (lote 2, seção 10)
+- **IMG_9048.DNG** — a melhor "establishing shot" do lote inteiro: pessoa + fachada completa + piscina + jardim no mesmo quadro (exatamente o "pessoa contemplando a vista" pedido no briefing original). Havia 4 variações quase idênticas dela (IMG_9047, 9049, 9050) — usei só a melhor pose para não repetir.
+- **IMG_8965.DNG** — a vista do mar que **não existia** no lote 1 (eu tinha sinalizado essa ausência na seção 1). Encontrada numa foto tirada de andar alto, coqueiros emoldurando a faixa de mar ao fundo.
+- **IMG_8955.DNG** — vista da própria varanda para o quintal/rua.
+- **IMG_8991.DNG** — espaço comum tipo lounge/coworking, já mobiliado (mesas, poltronas, TV) — o único ambiente interno do lote já pronto para foto sem precisar de mobília virtual.
+- **IMG_9015.DNG** — academia já equipada (esteira, aparelhos, anilhas).
+- **IMG_9051.DNG** — variação de piscina com espreguiçadeira em primeiro plano e as "vilas" (casas brancas) do entorno ao fundo — reforça o nome do empreendimento.
+
+### ⚠️ Entraram, mas com uma limitação a saber
+- **story-8 (varanda, IMG_8955)** e **story-11 (piscina, IMG_9051)**: ambas têm um **poste de fiação elétrica bem visível** no meio do quadro. O tratamento automático (Pillow) faz recorte, cor e texto, mas não remove objetos da cena — isso exige uma ferramenta de "generative fill" (Photoshop) ou geração por IA. Prompt pronto pra quem for finalizar:
+  ```
+  Remove the utility pole and overhead power lines from this photo, seamlessly filling the area with the matching sky/tree background, keep everything else in the frame unchanged, photorealistic result
+  ```
+
+### Fotos boas, mas que exigem mais que recorte/cor (não viraram card ainda)
+- **IMG_8945.DNG** — a única foto de **fachada completa** do prédio (frontal, rua inteira) — mas com 2 carros estacionados ocupando todo o primeiro plano e fiação aérea cruzando o céu. Vale mais a pena uma geração por IA do que recorte, pra não "cortar" o prédio:
+  ```
+  Photorealistic real estate exterior photo: clean street view of this same white modern residential building facade, empty street with no parked cars, no overhead power lines, warm late-afternoon light, well-manicured landscaping at the entrance gate, vertical 4:5 crop --ar 4:5
+  ```
+- **IMG_8981.DNG / IMG_8982.DNG** — cobertura duplex já com piso e esquadrias prontos (não é "obra crua"), com vista da janela — mas totalmente **sem mobília**. Precisa de home staging virtual, não só color grading:
+  ```
+  Virtually stage this empty duplex penthouse living room: add a light neutral sofa, a round wood coffee table, a sheer curtain by the glass doors, and a floor lamp near the staircase, keep the existing marble floor, staircase, ceiling and window view exactly as is, warm natural light, photorealistic interior design magazine style
+  ```
+
+### Descartadas desta rodada (e por quê)
+- **Grupo "piscina baixo ângulo" duplicado**: IMG_9059/9060/9062/9063/9064 (JPG) — 5 variações do mesmo tripé já coberto por `story-4` e pelo card extra `story-11`; mais uma delas só cansaria o feed (ver seção 4).
+- **IMG_9042 / IMG_9043.DNG** — duas pessoas admirando o prédio de baixo, ângulo bem interessante, mas distorção de "olho de peixe" forte + poste de fiação cruzando o rosto das pessoas — pediria o mesmo retoque de remoção de poste acima **e** correção de perspectiva; fica como "banco" para uma próxima rodada se o gestor topar o retoque extra.
+- **Áreas comuns ainda em obra** — sala de festas/kids (IMG_8990, 8998, 8999, 9001) e 2 unidades vazias com piso ainda em contrapiso bruto (IMG_8957, 8958): sem mobília e, nos dois últimos casos, sem acabamento — mais próximas de "canteiro de obra" do que de "desejo", não dá pra salvar só com color grading.
+- **Fotos de equipamento de academia em close** (IMG_9011, 9012, 9013, 9014) — repetem `story-10` de ângulos mais fechados, com efeito "catálogo de produto" que o briefing pediu pra evitar.
+- **Escada de serviço** (IMG_9004) — área puramente funcional, sem apelo de lifestyle.
+
+Vídeos (`.MOV`) seguem fora desta rodada — ver seção 6.
