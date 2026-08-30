@@ -12,15 +12,27 @@ Direção de cor única do início ao fim: **ouro sutil + tons terrosos e madeir
 
 | Peça | Arquivo | Conteúdo |
 |---|---|---|
-| Roteiro visual completo (5 slides) | `carrossel/roteiro-carrossel-lifestyle.md` | Descrição de cena, prompt técnico de geração/edição de imagem (Midjourney/DALL-E) e sugestão de tipografia/posicionamento para cada slide |
+| **Os 5 cards prontos (JPG, 1080×1350)** | `carrossel/cards/slide-1-hook.jpg` … `slide-5-cta.jpg` | Peças finais montadas, prontas para publicar no carrossel |
+| Roteiro visual completo (5 slides) | `carrossel/roteiro-carrossel-lifestyle.md` | Descrição de cena, prompt técnico de geração/edição de imagem (Midjourney/DALL-E) e sugestão de tipografia/posicionamento — referência para regenerar/ajustar qualquer card |
 | Legenda e hashtags do post | `copy/legendas-e-hashtags.md` | Legenda pronta para colar + comentário fixado sugerido |
-| Fotos-fonte da corretora | `corretora-fonte/julianne-costa-01.jpg`, `julianne-costa-02.jpg` | Fotos reais de Julianne Costa, usadas como referência de edição para o slide 5 |
+| Fotos-fonte da corretora | `corretora-fonte/julianne-costa-01.jpg`, `julianne-costa-02.jpg` | Fotos reais de Julianne Costa, usadas no slide 5 |
+
+### Como os 5 cards foram montados
+
+O conector de geração de imagem por IA (ElevenLabs) não estava autorizado nesta sessão (erro de permissão), então os cards foram montados com as **imagens reais oficiais do empreendimento**, extraídas em alta resolução do book técnico do Drive, mais a foto real da corretora — com tratamento de cor, composição e tipografia aplicados por cima:
+
+- **Slide 1 (capa)** — foto oficial da fachada do Twin Towers ao entardecer (recortada do book).
+- **Slides 2 e 3** — fotos oficiais do living integrado das plantas 71m² e 74m² (a do 74m² já veio com luz de golden hour genuína, batendo direto com a paleta da campanha).
+- **Slide 4** — recorte da planta de implantação (vista aérea ilustrativa do Twin's Club/piscinas), com grade de cor aplicada; é uma ilustração técnica, não uma foto de lazer — por isso está identificado como "vista aérea ilustrativa" no rodapé do card, para não passar por algo que não é.
+- **Slide 5** — foto real da Julianne Costa, regradada para a paleta quente da campanha, emoldurada sobre um fundo desfocado da fachada.
+
+Não foi possível extrair frames do vídeo oficial (`TWIN TOWERS - VIDEO.mp4`) porque o arquivo (192MB) excede o limite de download do conector de Drive disponível nesta sessão — se isso for importante, ele pode ser baixado manualmente e frames golden-hour do Twin's Club podem substituir o slide 4 por uma versão fotográfica real.
+
+O roteiro (`carrossel/roteiro-carrossel-lifestyle.md`) continua valendo como referência de arte-direção — inclusive com os prompts de IA — caso a equipe queira gerar versões alternativas mais adiante (com Midjourney/DALL-E ou o conector de imagem, uma vez reautorizado).
 
 ## A corretora na campanha
 
-Seguindo a mesma lógica que funcionou no UP Vilas (com a Juli): o carrossel deixa o espaço e a experiência falarem primeiro (slides 1–4) e só apresenta a pessoa por trás do atendimento no fechamento (slide 5) — **Julianne Costa**, corretora responsável. O slide 5 parte de uma foto real dela (não é geração do zero), regradado para a mesma paleta quente da campanha. Detalhes de qual foto usar como base e como tratar o fundo estão no roteiro.
-
-Este entregável é o **roteiro/plano criativo** dos cards (texto + prompts), pronto para a etapa de geração/edição de imagem e montagem final pela equipe de design — não inclui as imagens finais renderizadas.
+Seguindo a mesma lógica que funcionou no UP Vilas (com a Juli): o carrossel deixa o espaço e a experiência falarem primeiro (slides 1–4) e só apresenta a pessoa por trás do atendimento no fechamento (slide 5) — **Julianne Costa**, corretora responsável.
 
 ## Estrutura narrativa do carrossel
 
