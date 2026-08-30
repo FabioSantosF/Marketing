@@ -16,6 +16,7 @@ Direção de cor única do início ao fim: **ouro sutil + tons terrosos e madeir
 | Roteiro visual completo (5 slides) | `carrossel/roteiro-carrossel-lifestyle.md` | Descrição de cena, prompt técnico de geração/edição de imagem (Midjourney/DALL-E) e sugestão de tipografia/posicionamento — referência para regenerar/ajustar qualquer card |
 | Legenda e hashtags do post | `copy/legendas-e-hashtags.md` | Legenda pronta para colar + comentário fixado sugerido |
 | Fotos-fonte da corretora | `corretora-fonte/julianne-costa-01.jpg`, `julianne-costa-02.jpg` | Fotos reais de Julianne Costa, usadas no slide 5 |
+| Logo da imobiliária | `marca-parceira/conceitto-logo.png` | Logo da Conceitto Imóveis com fundo removido (transparente), aplicada no rodapé do slide 5 |
 
 ### Como os 5 cards foram montados
 
@@ -32,7 +33,7 @@ O roteiro (`carrossel/roteiro-carrossel-lifestyle.md`) continua valendo como ref
 
 ## A corretora na campanha
 
-Seguindo a mesma lógica que funcionou no UP Vilas (com a Juli): o carrossel deixa o espaço e a experiência falarem primeiro (slides 1–4) e só apresenta a pessoa por trás do atendimento no fechamento (slide 5) — **Julianne Costa**, corretora responsável, contato **WhatsApp (71) 98855-1313** (já aplicado no card e na legenda).
+Seguindo a mesma lógica que funcionou no UP Vilas (com a Juli): o carrossel deixa o espaço e a experiência falarem primeiro (slides 1–4) e só apresenta a pessoa por trás do atendimento no fechamento (slide 5) — **Julianne Costa**, corretora responsável, contato **WhatsApp (71) 98855-1313** (já aplicado no card e na legenda). O slide 5 fecha com a logo da **Conceitto Imóveis** (a imobiliária) abaixo do contato, mesmo padrão de assinatura usado no encerramento da campanha do UP Vilas.
 
 ## Formato: feed vs. Reels
 
