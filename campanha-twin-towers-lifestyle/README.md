@@ -32,7 +32,11 @@ O roteiro (`carrossel/roteiro-carrossel-lifestyle.md`) continua valendo como ref
 
 ## A corretora na campanha
 
-Seguindo a mesma lógica que funcionou no UP Vilas (com a Juli): o carrossel deixa o espaço e a experiência falarem primeiro (slides 1–4) e só apresenta a pessoa por trás do atendimento no fechamento (slide 5) — **Julianne Costa**, corretora responsável.
+Seguindo a mesma lógica que funcionou no UP Vilas (com a Juli): o carrossel deixa o espaço e a experiência falarem primeiro (slides 1–4) e só apresenta a pessoa por trás do atendimento no fechamento (slide 5) — **Julianne Costa**, corretora responsável, contato **WhatsApp (71) 98855-1313** (já aplicado no card e na legenda).
+
+## Formato: feed vs. Reels
+
+Os 5 cards foram montados em **1080×1350 (4:5)**, o formato nativo de carrossel de **feed** do Instagram — é o que está pronto para publicar hoje. O Instagram não permite carrossel de várias imagens dentro de um Reels (Reels é um vídeo único, vertical 1080×1920/9:16); se a ideia é também postar como Reels, o caminho é transformar os 5 cards num vídeo-slideshow (cada card por ~2-3s, com corte/transição) redimensionado para 9:16 — me avise que eu gero essa versão.
 
 ## Estrutura narrativa do carrossel
 

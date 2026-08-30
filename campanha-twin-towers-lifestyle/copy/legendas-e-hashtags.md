@@ -8,10 +8,12 @@
 >
 > Conecte-se com a sua melhor versão. Agende uma visita privativa com a Julianne 👇
 >
+> 📲 WhatsApp (71) 98855-1313
+>
 > #TwinTowers #DenaRealizacoes #QualidadeDeVida #EstiloDeVida #ApartamentoAltoPadrao #HomeStaging #ArquiteturaEBemEstar #InvestimentoImobiliario
 
 ## Comentário fixado sugerido
 
 > 🏙️ Twin Towers by DENA — apartamentos de 71m² e 74m², 2 suítes
 > 🏊 Twin's Club: piscina com raia, deck molhado, academia, pet place, brinquedoteca, sport bar
-> 📩 Julianne Costa, corretora — chama no direct para agendar sua visita privativa
+> 📩 Julianne Costa, corretora — chama no direct ou no WhatsApp (71) 98855-1313 para agendar sua visita privativa
