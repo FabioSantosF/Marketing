@@ -92,21 +92,26 @@ Cinematic lifestyle photography of a resort-style lap pool deck at golden hour, 
 
 ---
 
-## Slide 5 — Call to Action / Fechamento
+## Slide 5 — Call to Action / Fechamento (com Julianne Costa, corretora)
+
+Segue a mesma lógica já validada na campanha do UP Vilas: a mensagem e o espaço falam primeiro (slides 1–4), e a corretora só entra pessoalmente no fechamento, para fazer o convite — reforçando que por trás do empreendimento existe uma pessoa real, disponível no direct. Fonte: fotos reais da corretora **Julianne Costa**, em `../corretora-fonte/julianne-costa-01.jpg` e `julianne-costa-02.jpg`.
 
 **Descrição da cena:**
-Cartela limpa, não uma foto de ambiente — silhueta arquitetônica do Twin Towers desfocada ao fundo, ao entardecer, como continuidade visual com o slide 1 (fecha o loop do carrossel). Gradiente suave de branco marfim para azul horizon com um brilho dourado discreto em um dos cantos. Muito espaço negativo central reservado para logo + texto, sem elementos concorrendo por atenção.
+Retrato de Julianne Costa, sorriso natural, com o fundo original substituído/desfocado por uma versão em tom quente e dourado da silhueta do Twin Towers ao entardecer — a mesma referência arquitetônica do slide 1, fechando o loop visual do carrossel. A roupa dela (blazer/jaqueta camel + calça terracota) já está, por sorte, na mesma paleta terrosa da campanha, então a regradação de cor deve preservar esse tom, só esquentar a luz geral (as fotos originais foram feitas em luz de meio-dia, mais neutra/fria — regradar para golden hour) e suavizar o fundo cheio de elementos (placas, poste, grade) que aparecem nas fotos originais. Ela posicionada em um dos terços (esquerdo ou direito, conforme a foto-base escolhida), com o terço oposto limpo para o texto.
 
-**Prompt técnico (Midjourney/DALL-E):**
+**Foto-base recomendada:** `julianne-costa-02.jpg` (pose de braços cruzados entre as palmeiras) — tem menos elementos de fundo concorrendo com o texto que a `julianne-costa-01.jpg` (que tem placas institucionais visíveis atrás dela) e já possui espaço negativo natural nas laterais.
+
+**Prompt técnico (edição de imagem a partir da foto real — Midjourney /describe+vary region, Adobe Firefly Generative Fill, DALL-E edit ou similar):**
 ```
-Minimalist elegant background plate, soft warm gradient from ivory white to a subtle hint of horizon blue, warm golden light glow in one corner, a softly blurred silhouette of a modern twin-tower facade at dusk in the background for continuity, clean uncluttered composition with ample centered negative space for a logo and text, warm sophisticated color grading — subtle gold + ivory + earthy undertone, no sharp architectural detail, no people, no text baked in, vertical 4:5, --ar 4:5 --style raw --v 6
+Photo edit, preserve the woman's exact likeness, pose, facial features, smile, hair, glasses and outfit unchanged, replace the background entirely with a softly blurred warm dusk silhouette of a modern twin-tower residential facade (consistent with the campaign's hero shot), regrade the overall lighting from flat neutral midday light to warm golden hour light with a soft warm rim light on her hair and shoulders, keep her camel jacket and terracotta pants tones but make them read warmer and richer, remove any visible signage, poles or clutter from the background, add gentle warm cinematic color grading — subtle gold + earthy wood tones + ivory white + hint of horizon blue in the sky, clean negative space on one side of the frame for typography, vertical composition 4:5, photorealistic, no added text, --ar 4:5
 ```
 
 **Tipografia e posicionamento:**
-- Logo Twin Towers centralizado, no terço superior do bloco de respiro central.
-- Abaixo, headline em Playfair Display Light: **"Conecte-se com a sua melhor versão."**
-- Linha de apoio em Montserrat, tamanho menor, com CTA direto: **"Agende uma visita privativa."**
-- Espaço reservado abaixo para @ do perfil / WhatsApp do corretor(a) responsável (a inserir pela equipe de design/atendimento).
+- No terço oposto à Julianne, bloco de texto alinhado à mesma margem dos slides 2 e 3 (Montserrat Light + acento em Playfair Display).
+- Headline: **"Conecte-se com a sua melhor versão."**
+- CTA: **"Agende uma visita privativa."**
+- Crachá/legenda discreta perto dela, no rodapé do quadro (mesmo recurso usado no vídeo do UP Vilas): **"Julianne Costa · Corretora de imóveis"**, seguido do @ do perfil / WhatsApp (a inserir pela equipe de design/atendimento).
+- Logo Twin Towers pequeno, no canto superior — este slide já não precisa do logo centralizado grande, porque a presença da Julianne é o elemento de confiança/fechamento.
 
 ---
 
@@ -114,4 +119,5 @@ Minimalist elegant background plate, soft warm gradient from ivory white to a su
 
 - Gere os 5 slides na mesma sessão/seed quando a ferramenta permitir, ou ao menos revise lado a lado antes de publicar — o objetivo é que o carrossel pareça **um único ensaio fotográfico**, não 5 imagens soltas coladas.
 - Nunca reintroduzir tom de "canteiro de obra" (cinza cru, concreto aparente, luz branca de obra) em nenhum slide — inclusive nos crops usados como preview/thumbnail do carrossel.
+- O slide 5 é o único que parte de uma **foto real** (Julianne Costa), não de geração pura por texto — trate-o como edição/regradação de imagem, não como criação do zero, para preservar a semelhança dela. Confira o resultado ao lado dos slides 1–4 antes de publicar: a temperatura de luz e o tom de pele precisam ler como parte do mesmo ensaio, nunca "colado por cima".
 - Copy final (com quebras de linha e hashtags prontas para colar) está em `../copy/legendas-e-hashtags.md`.

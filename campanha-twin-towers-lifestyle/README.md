@@ -14,6 +14,11 @@ Direção de cor única do início ao fim: **ouro sutil + tons terrosos e madeir
 |---|---|---|
 | Roteiro visual completo (5 slides) | `carrossel/roteiro-carrossel-lifestyle.md` | Descrição de cena, prompt técnico de geração/edição de imagem (Midjourney/DALL-E) e sugestão de tipografia/posicionamento para cada slide |
 | Legenda e hashtags do post | `copy/legendas-e-hashtags.md` | Legenda pronta para colar + comentário fixado sugerido |
+| Fotos-fonte da corretora | `corretora-fonte/julianne-costa-01.jpg`, `julianne-costa-02.jpg` | Fotos reais de Julianne Costa, usadas como referência de edição para o slide 5 |
+
+## A corretora na campanha
+
+Seguindo a mesma lógica que funcionou no UP Vilas (com a Juli): o carrossel deixa o espaço e a experiência falarem primeiro (slides 1–4) e só apresenta a pessoa por trás do atendimento no fechamento (slide 5) — **Julianne Costa**, corretora responsável. O slide 5 parte de uma foto real dela (não é geração do zero), regradado para a mesma paleta quente da campanha. Detalhes de qual foto usar como base e como tratar o fundo estão no roteiro.
 
 Este entregável é o **roteiro/plano criativo** dos cards (texto + prompts), pronto para a etapa de geração/edição de imagem e montagem final pela equipe de design — não inclui as imagens finais renderizadas.
 
