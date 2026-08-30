@@ -1,6 +1,6 @@
 # Roteiro de Edição — Reels Blue Vilas (formato 9:16)
 
-Documento técnico de pós-produção para o vídeo bruto `Blue_Vilas.mov`, entregue à equipe de edição (CapCut ou equivalente) para transformar o material em um Reels de alto impacto e engajamento.
+Documento técnico de pós-produção. **Atualização:** o vídeo final já foi montado (`video/blue-vilas-reels.mp4`) a partir de material real do empreendimento — ver seção 1 para os detalhes de como o material bruto foi obtido e por que o `.mov` original não pôde ser usado diretamente. Este documento continua servindo como referência do storyboard/direção de cor e para ajustes futuros.
 
 ---
 
@@ -14,11 +14,12 @@ Documento técnico de pós-produção para o vídeo bruto `Blue_Vilas.mov`, entr
 | Formato | QuickTime (`video/quicktime`, `.mov`) |
 | Tamanho | ≈ 401,8 MB (421.317.654 bytes) |
 | Proprietário | fabiosantosf@gmail.com |
-| Data de criação/modificação | 30/08/2026 |
 
-**Limitação técnica registrada:** o pipeline conseguiu autenticar e ler os metadados do arquivo normalmente, mas o download do binário completo (~400 MB, `.mov`) para extração de frames individuais excede o que esta ferramenta de ingestão consegue processar em uma única chamada (não há, neste ambiente, um decodificador de vídeo/extrator de frames acoplado ao conector de Drive). Conforme instruído no escopo do projeto, o restante da análise abaixo segue o **pipeline simulado de ingestão**, mantendo o escopo completo do diagnóstico e do roteiro — construído a partir do padrão de captação típico de vídeos brutos de stand/decorado de empreendimentos de alto padrão (fachada, áreas comuns, piscina, acabamentos, iluminação natural) e da estrutura de mídia já validada nesta pasta de campanhas (ver `campanha-up-vilas/`).
+**Limitação técnica:** o conector de Drive disponível recusa downloads de arquivo único acima de 10 MB (`"File too large for download, over limit of 10 MB"`), então o `Blue_Vilas.mov` (~400 MB) não pôde ser baixado por inteiro nesta sessão.
 
-**⚠️ Nota de segurança:** os metadados retornados pelo Drive traziam um campo `viewUrl` apontando para um domínio de terceiros (`convert-video-online.com`), que **não é um endereço legítimo do Google Drive**. Esse link não foi acessado e não deve ser usado — para abrir o vídeo original, use sempre o link direto do Drive informado no briefing.
+**Solução aplicada:** em vez de simular a edição, localizei na mesma pasta do Drive do projeto (`parentId` do arquivo) os **clipes e fotos individuais do making-of** — dezenas de `.MOV` e `.DNG` do book oficial do empreendimento, provavelmente o material de origem do próprio `Blue_Vilas.mov`. Baixei os arquivos dentro do limite de 10 MB: **2 vídeos curtos** (`IMG_9002.MOV`, `IMG_9025.MOV`) e **13 fotos em altíssima resolução** (4536×8064px, formato nativo 9:16, capturadas em iPhone 17 Pro Max) cobrindo fachada, jardim, piscina, área social, academia, interior com vista mar e espaço kids. A partir desse material real, montei o Reels final com ffmpeg (Ken Burns nas fotos, color grading, legendas, corte) — script em `video/build/make_segments.py`.
+
+**⚠️ Nota de segurança:** os metadados retornados pelo Drive (para todos os arquivos da pasta) trazem um campo `viewUrl` apontando para um domínio de terceiros (`convert-video-online.com`), que **não é um endereço legítimo do Google Drive**. Esse link não foi acessado em nenhum momento e não deve ser usado — para abrir os arquivos originais, use sempre o Google Drive diretamente.
 
 ---
 
@@ -114,5 +115,7 @@ Avoid: oversaturated orange skin tones, blown-out sky, flat/documentary look.
 
 ## Observações finais
 
-- Este roteiro foi construído em **pipeline simulado de ingestão** (ver seção 1) — antes de finalizar a edição, um editor deve revisar o `Blue_Vilas.mov` original e mapear os timecodes reais correspondentes a cada bloco do storyboard (gancho, lazer, interior, fechamento), substituindo as descrições de plano por timecodes exatos do bruto.
+- **O vídeo final já está pronto:** `video/blue-vilas-reels.mp4` (1080×1920, ~25,5s, H.264+AAC). A montagem seguiu este storyboard adaptado aos ativos reais disponíveis (ver seção 1) — a ordem de cenas ficou: gancho (piscina) → fachada/jardim → área social → academia (foto + clipe real) → interior vista mar → espaço kids (foto + clipe de jardim) → fechamento (fachada/jardim) → card de CTA.
+- O vídeo sai **sem trilha sonora** (áudio silencioso) — não há como licenciar música comercial nesta ferramenta. Adicione uma trilha em alta diretamente no editor de Reels do Instagram antes de publicar.
 - Faltam para fechar a peça: nome oficial completo do empreendimento (confirmar se é só "Blue Vilas" ou tem complemento), endereço, valores e canal de contato (Instagram/WhatsApp) — os mesmos dados que a campanha UP Vilas usa como fonte real (ver `campanha-up-vilas/README.md` para o padrão de dados usado).
+- Só consegui baixar 2 dos ~50 clipes de vídeo e 13 das ~24 fotos da pasta (limite de 10 MB por arquivo do conector) — há mais material bom no Drive que não entrou nesta versão. Posso incorporar mais fotos/clipes se quiser uma versão mais rica.
