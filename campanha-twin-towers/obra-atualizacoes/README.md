@@ -11,6 +11,10 @@ Cada atualização vira uma pasta com a data da obra: `AAAA-MM-DD/`.
 | 13/07/2026 | Estrutura em execução (pilares/fôrmas em concretagem) | `2026-07-13/` |
 | Agosto/2026 | Estrutura em avanço (laje do 1º pavimento concretada, pilares do 2º subindo) | `2026-08/` |
 
+## Vídeo de evolução (recap com 2+ datas)
+
+Além da atualização mensal avulsa, existe `evolucao/` — um Reels único (29,8s) que costura as atualizações publicadas numa linha do tempo, com um card comparativo "antes/depois" no meio (foto de julho vs. foto de agosto) antes do CTA final. Ele **reaproveita os clipes já cortados de cada atualização mensal** (cópia direta, sem recodificar) em vez de recortar a fonte de novo — só usa cards novos (hook e o comparativo). Sempre que uma nova atualização mensal for publicada, atualizar `evolucao/` puxando os melhores momentos de cada mês na pasta correspondente, e trocar o comparativo pra usar a data mais recente como "depois".
+
 ## Como montar a próxima atualização
 
 1. A Julianne manda o vídeo bruto de drone (com ou sem o card "Obra: Twin Towers / Data: [dd/mm/aaaa]" que a DENA costuma usar — em agosto/2026 veio só com uma legenda "MÊS/ANO" queimada na imagem, sem dia exato, e sem áudio de locução).
