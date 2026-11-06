@@ -37,26 +37,36 @@ def mascara_moldura(tpl):
     a = tpl.astype(int)
     sat = a.max(2) - a.min(2)
     lab, _ = nd.label(sat < 22)
-    m = nd.binary_fill_holes(lab == lab[380, 1000])
+    m = lab == lab[380, 1000]
+    # preenche só furos pequenos (ruído); furos grandes são selos/faixas do template
+    # que ficam POR CIMA da foto (ex.: "2ª Noite")
+    furos = nd.binary_fill_holes(m) & ~m
+    fl, n = nd.label(furos)
+    if n:
+        tam = nd.sum(furos, fl, range(1, n + 1))
+        m |= np.isin(fl, 1 + np.where(tam < 3000)[0])
     m = nd.binary_dilation(m, iterations=1)  # cobre o pixel de antialias junto ao filete dourado
     return m
 
 
-def preparar_foto(foto, larg, alt, x0_corte):
-    """Corta a lateral esquerda (púlpito) e, se faltar altura, estende apenas o teto liso
-    acima da foto. Nenhum pixel de pessoa é gerado ou alterado."""
-    f = foto[:, x0_corte:]
+def preparar_foto(foto, larg, alt, x0_corte, x1_corte=0, estender="topo"):
+    """Corta as laterais e, se faltar altura, estende uma faixa estreita a partir da borda
+    (topo: teto liso; base: continuação vertical do altar). Nenhuma pessoa é gerada/alterada."""
+    f = foto[:, x0_corte:foto.shape[1] - x1_corte]
     h, w = f.shape[:2]
     alt_nec = int(round(w * alt / larg))
     if alt_nec > h:
         ext = alt_nec - h
-        faixa = f[0:3].astype(np.float32).mean(0)  # cor do forro/teto na borda superior
+        borda = f[0:3] if estender == "topo" else f[-3:]
+        faixa = borda.astype(np.float32).mean(0)
         faixa = cv2.GaussianBlur(faixa[None], (0, 0), sigmaX=6)[0]
-        topo = np.repeat(faixa[None], ext, 0)
-        # leve escurecimento para cima (teto em sombra) + grão igual ao da foto
+        bloco = np.repeat(faixa[None], ext, 0)
         grad = np.linspace(0.90, 1.0, ext, dtype=np.float32)[:, None, None]
-        topo = topo * grad + np.random.default_rng(7).normal(0, 1.6, topo.shape)
-        f = np.vstack([np.clip(topo, 0, 255).astype(np.uint8), f])
+        if estender != "topo":
+            grad = grad[::-1]
+        bloco = bloco * grad + np.random.default_rng(7).normal(0, 1.6, bloco.shape)
+        bloco = np.clip(bloco, 0, 255).astype(np.uint8)
+        f = np.vstack([bloco, f] if estender == "topo" else [f, bloco])
     elif alt_nec < h:
         corte = h - alt_nec
         f = f[corte:]  # corta só parede no alto
@@ -147,7 +157,10 @@ def main():
     ap.add_argument("--foto", default=AQUI / "entrada/foto-pregacao.jpg")
     ap.add_argument("--saida", default=AQUI / "saida/post-agradecimento.png")
     ap.add_argument("--corte-esquerda", type=int, default=230,
-                    help="pixels removidos da esquerda da foto original (púlpito)")
+                    help="pixels removidos da esquerda da foto original")
+    ap.add_argument("--corte-direita", type=int, default=0)
+    ap.add_argument("--estender", choices=["topo", "base"], default="topo",
+                    help="lado completado se a foto for mais baixa que a moldura")
     ap.add_argument("--limpar-rodape", action="store_true")
     ap.add_argument("--nome", help="nome em destaque no agradecimento")
     ap.add_argument("--texto", help="restante da mensagem de agradecimento")
@@ -170,7 +183,7 @@ def main():
     alfa = cv2.GaussianBlur(alfa, (0, 0), 0.7)[..., None]
 
     larg, alt = (bx1 - bx0) * s, (by1 - by0) * s
-    f = gradacao(preparar_foto(foto, larg, alt, a.corte_esquerda))
+    f = gradacao(preparar_foto(foto, larg, alt, a.corte_esquerda, a.corte_direita, a.estender))
     camada = np.zeros_like(base)
     camada[by0 * s:by1 * s, bx0 * s:bx1 * s] = f
 
