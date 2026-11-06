@@ -82,6 +82,23 @@ def gradacao(img):
     return np.clip(x * 255, 0, 255).astype(np.uint8)
 
 
+def nitidez(img, forca):
+    """Nitidez clássica (unsharp mask) só na luminância, aplicada igualmente na foto toda.
+    Realça bordas já existentes; não recria nem altera traços. Limiar evita realçar ruído."""
+    if forca <= 0:
+        return img
+    lab = cv2.cvtColor(img, cv2.COLOR_RGB2LAB).astype(np.float32)
+    L = lab[..., 0]
+    # detalhe fino (contornos, óculos, tecido)
+    det = L - cv2.GaussianBlur(L, (0, 0), 1.1)
+    det = np.sign(det) * np.maximum(np.abs(det) - 1.0, 0)  # limiar anti-ruído
+    # micro-contraste suave ("clarity") para tirar o aspecto lavado
+    cla = L - cv2.GaussianBlur(L, (0, 0), 10)
+    L2 = L + forca * (0.9 * det + 0.18 * cla)
+    lab[..., 0] = np.clip(L2, 0, 255)
+    return cv2.cvtColor(lab.astype(np.uint8), cv2.COLOR_LAB2RGB)
+
+
 def _preencher(reg, valido, sigma):
     num = cv2.GaussianBlur(reg * valido[..., None], (0, 0), sigma)
     den = cv2.GaussianBlur(valido, (0, 0), sigma)[..., None]
@@ -158,6 +175,8 @@ def main():
     ap.add_argument("--saida", default=AQUI / "saida/post-agradecimento.png")
     ap.add_argument("--corte-esquerda", type=int, default=230,
                     help="pixels removidos da esquerda da foto original")
+    ap.add_argument("--nitidez", type=float, default=0.0,
+                    help="força da nitidez (0 = desligada; 1 = recomendada; 1.5 = forte)")
     ap.add_argument("--corte-direita", type=int, default=0)
     ap.add_argument("--estender", choices=["topo", "base"], default="topo",
                     help="lado completado se a foto for mais baixa que a moldura")
@@ -183,7 +202,7 @@ def main():
     alfa = cv2.GaussianBlur(alfa, (0, 0), 0.7)[..., None]
 
     larg, alt = (bx1 - bx0) * s, (by1 - by0) * s
-    f = gradacao(preparar_foto(foto, larg, alt, a.corte_esquerda, a.corte_direita, a.estender))
+    f = nitidez(gradacao(preparar_foto(foto, larg, alt, a.corte_esquerda, a.corte_direita, a.estender)), a.nitidez)
     camada = np.zeros_like(base)
     camada[by0 * s:by1 * s, bx0 * s:bx1 * s] = f
 

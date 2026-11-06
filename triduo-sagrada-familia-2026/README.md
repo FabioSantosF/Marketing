@@ -25,8 +25,10 @@ python3 compor_post.py --foto entrada/OUTRA_FOTO.jpg --saida saida/novo.png \
 Comando usado na 2ª noite:
 ```bash
 python3 compor_post.py --template entrada/template-noite-2.png --foto entrada/foto-noite-2.jpg \
-  --saida saida/noite-2-post-agradecimento.png --corte-esquerda 250 --corte-direita 160 --estender base
+  --saida saida/noite-2-post-agradecimento.png --corte-esquerda 250 --corte-direita 160 --estender base --nitidez 1.4
 ```
 Selos ou faixas do template que ficam dentro da moldura, como "2ª Noite", são detectados e continuam por cima da foto.
+
+`--nitidez` (0 a ~1,5) aplica nitidez clássica só na luminância, igual na foto inteira. Acima de 1,5 surgem halos claros nos contornos.
 
 Use `--limpar-rodape` para gerar sem texto e `--corte-esquerda N` para ajustar o enquadramento.
