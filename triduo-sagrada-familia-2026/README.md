@@ -44,7 +44,7 @@ python3 compor_post.py --template entrada/template-noite-2.png --foto entrada/fo
 Dia da Festa: `--selo` troca o texto da faixa vermelha dentro da moldura. Use `--foto ""` para gerar só o template, ou passe a foto para gerar o post pronto:
 ```bash
 python3 compor_post.py --template entrada/template-noite-2.png --foto entrada/FOTO-DA-MISSA.jpg \
-  --saida saida/festa-post-conego-osmar.png --selo "Missa Solene" --nome "Côn. Osmar Júnior" \
+  --saida saida/festa-post-conego-osmar.png --selo "Missa Solene" --nome "Côn. Osmar Júnior" --logo entrada/logo-pascom.jpg \
   --texto "por presidir a Missa Solene da Festa da Sagrada Família, conduzindo nossa comunidade no amor, na comunhão e na missão." \
   --nitidez 1.4
 ```

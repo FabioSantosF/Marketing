@@ -252,6 +252,12 @@ def escrever_rodape(img, nome, texto, s, prefixo="Agradecemos ao ", logo=None):
     f_nome = ImageFont.truetype(FONTE_BOLD, tam_nome * s)
     w1 = d.textlength(prefixo, font=f_reg)
     w2 = d.textlength(nome, font=f_nome)
+    while w1 + w2 > larg_max - 24 * s and tam_nome > 24:  # 1ª linha: reduz até caber
+        tam_nome, tam_pre = tam_nome - 1, tam_pre - 1
+        f_reg = ImageFont.truetype(FONTE_REG, tam_pre * s)
+        f_nome = ImageFont.truetype(FONTE_BOLD, tam_nome * s)
+        w1 = d.textlength(prefixo, font=f_reg)
+        w2 = d.textlength(nome, font=f_nome)
     x = cx - (w1 + w2) / 2
     y = 800 * s
     itens = [((x, y + (tam_nome - tam_pre) * 0.75 * s), prefixo, f_reg, AZUL),
