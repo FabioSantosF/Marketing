@@ -9,6 +9,7 @@ Coloca uma foto do evento dentro da moldura do template oficial de agradecimento
 | `saida/post-agradecimento-rodape-livre.png` | Mesma arte com a área do texto de agradecimento vazia |
 | `saida/noite-2-post-agradecimento.png` (+ `-1536x1024.jpg`) | **2ª noite** (Pe. César Dias), template próprio com a faixa "2ª Noite" sobre a foto |
 | `saida/noite-2-pascom-leo-moger.png` (+ `-1536x1024.jpg`) | **2ª noite, agradecimento da Pascom a Léo Moger**, com o logo da Pascom no rodapé |
+| `saida/festa-template-conego-osmar.png` (+ `-1536x1024.jpg`) | **Dia da Festa (08/11)**: template com moldura vazia, selo "Missa Solene" e agradecimento ao Côn. Osmar Júnior |
 | `saida/exemplo-texto-dinamico.png` | Exemplo do texto gerado pelo script (`--nome` / `--texto`) |
 
 ## Como a foto foi encaixada
@@ -38,6 +39,14 @@ python3 compor_post.py --template entrada/template-noite-2.png --foto entrada/fo
   --saida saida/noite-2-pascom-leo-moger.png --corte-esquerda 200 --corte-direita 160 --estender base \
   --nitidez 1.4 --logo entrada/logo-pascom.jpg --prefixo "A Pascom agradece a " --nome "Léo Moger" \
   --texto "pela generosa colaboração nesta 2ª noite do Tríduo da Sagrada Família. Sua dedicação ajuda nossa comunidade a anunciar a beleza da fé."
+```
+
+Dia da Festa: `--selo` troca o texto da faixa vermelha dentro da moldura. Use `--foto ""` para gerar só o template, ou passe a foto para gerar o post pronto:
+```bash
+python3 compor_post.py --template entrada/template-noite-2.png --foto entrada/FOTO-DA-MISSA.jpg \
+  --saida saida/festa-post-conego-osmar.png --selo "Missa Solene" --nome "Côn. Osmar Júnior" \
+  --texto "por presidir a Missa Solene da Festa da Sagrada Família, conduzindo nossa comunidade no amor, na comunhão e na missão." \
+  --nitidez 1.4
 ```
 
 Use `--limpar-rodape` para gerar sem texto e `--corte-esquerda N` para ajustar o enquadramento.

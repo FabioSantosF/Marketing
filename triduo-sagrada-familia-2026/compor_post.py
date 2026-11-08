@@ -197,6 +197,22 @@ def _quebrar(d, texto, larg_max, s, tam_max, max_linhas):
                 atual = p
         linhas.append(atual)
         if len(linhas) <= max_linhas:
+            # equilibra as linhas (evita palavra órfã): menor largura com o mesmo nº de linhas
+            n, lim = len(linhas), larg_max
+            while lim > larg_max * 0.5:
+                lim2 = lim - 4 * s
+                l2, at = [], ""
+                for p in texto.split():
+                    t = (at + " " + p).strip()
+                    if d.textlength(t, font=f) <= lim2:
+                        at = t
+                    else:
+                        l2.append(at)
+                        at = p
+                l2.append(at)
+                if len(l2) > n or "" in l2:
+                    break
+                lim, linhas = lim2, l2
             return f, tam, linhas
     return f, tam, linhas[:max_linhas]
 
@@ -230,7 +246,7 @@ def escrever_rodape(img, nome, texto, s, prefixo="Agradecemos ao ", logo=None):
         tam_nome, tam_pre, tam_max = 40, 32, 28
     else:
         cx, larg_max = 1010 * s, 760 * s
-        tam_nome, tam_pre, tam_max = 40, 34, 30
+        tam_nome, tam_pre, tam_max = 40, 34, 28
 
     f_reg = ImageFont.truetype(FONTE_REG, tam_pre * s)
     f_nome = ImageFont.truetype(FONTE_BOLD, tam_nome * s)
@@ -241,18 +257,61 @@ def escrever_rodape(img, nome, texto, s, prefixo="Agradecemos ao ", logo=None):
     itens = [((x, y + (tam_nome - tam_pre) * 0.75 * s), prefixo, f_reg, AZUL),
              ((x + w1, y), nome, f_nome, VERMELHO)]
     f_txt, tam, linhas = _quebrar(d, texto, larg_max, s, tam_max, 3)
-    y = 852 * s
+    y = (848 if len(linhas) == 3 else 856) * s
     for ln in linhas:
         w = d.textlength(ln, font=f_txt)
         itens.append(((cx - w / 2, y), ln, f_txt, AZUL))
-        y += int(tam * 1.25) * s
+        y += int(tam * 1.24) * s
     return _texto_com_brilho(img, itens, s)
+
+
+SELO = (843, 634, 1131, 696)  # faixa vermelha "Nª Noite" dentro da moldura (template 1536x1024)
+FONTE_SELO = "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"
+
+
+def limpar_selo(tpl):
+    """Apaga o texto branco do selo vermelho, reconstruindo o vermelho a partir das bordas."""
+    x0, y0, x1, y1 = SELO
+    reg = tpl[y0:y1, x0:x1].astype(np.float32)
+    r, g, b = reg[..., 0], reg[..., 1], reg[..., 2]
+    vermelho = (r > 60) & (r - g > 45) & (r - b > 40) & (g < 90)
+    pilula = nd.binary_erosion(nd.binary_fill_holes(nd.binary_closing(vermelho, iterations=3)), iterations=3)
+    texto = pilula & ~vermelho
+    texto = nd.binary_dilation(texto, iterations=3) & pilula
+    valido = (pilula & ~texto).astype(np.float32)
+    fundo = _preencher(reg, valido, 5)
+    fundo = np.where(den_baixo(valido, 5)[..., None], _preencher(reg, valido, 14), fundo)
+    alfa = cv2.GaussianBlur(texto.astype(np.float32), (0, 0), 1)[..., None]
+    out = tpl.copy()
+    out[y0:y1, x0:x1] = np.clip(fundo * alfa + reg * (1 - alfa), 0, 255).astype(np.uint8)
+    return out
+
+
+def escrever_selo(img, texto, s):
+    x0, y0, x1, y1 = [v * s for v in SELO]
+    cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+    d = ImageDraw.Draw(img)
+    for tam in range(38, 18, -1):
+        f = ImageFont.truetype(FONTE_SELO, tam * s)
+        bb = d.textbbox((0, 0), texto, font=f)
+        if bb[2] - bb[0] <= (x1 - x0) - 56 * s:
+            break
+    w, h = bb[2] - bb[0], bb[3] - bb[1]
+    pos = (cx - w / 2 - bb[0], cy - h / 2 - bb[1])
+    sombra = Image.new("L", img.size, 0)
+    ImageDraw.Draw(sombra).text((pos[0] + 1 * s, pos[1] + 2 * s), texto, font=f, fill=200)
+    sombra = sombra.filter(ImageFilter.GaussianBlur(2 * s))
+    img = Image.composite(Image.new("RGB", img.size, (60, 0, 0)), img, sombra)
+    ImageDraw.Draw(img).text(pos, texto, font=f, fill=(255, 250, 240))
+    return img
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--template", default=AQUI / "entrada/template-agradecimento.png")
-    ap.add_argument("--foto", default=AQUI / "entrada/foto-pregacao.jpg")
+    ap.add_argument("--foto", default=AQUI / "entrada/foto-pregacao.jpg",
+                    help='foto do evento; use --foto "" para gerar só o template (moldura vazia)')
+    ap.add_argument("--selo", help='novo texto da faixa vermelha dentro da moldura (ex.: "Missa Solene")')
     ap.add_argument("--saida", default=AQUI / "saida/post-agradecimento.png")
     ap.add_argument("--corte-esquerda", type=int, default=230,
                     help="pixels removidos da esquerda da foto original")
@@ -269,10 +328,12 @@ def main():
     a = ap.parse_args()
 
     tpl = np.array(Image.open(a.template).convert("RGB"))
-    foto = np.array(Image.open(a.foto).convert("RGB"))
+    foto = np.array(Image.open(a.foto).convert("RGB")) if a.foto else None
 
     if a.limpar_rodape or a.texto:
         tpl = limpar_rodape(tpl)
+    if a.selo:
+        tpl = limpar_selo(tpl)
 
     m = mascara_moldura(tpl)
     ys, xs = np.where(m)
@@ -284,13 +345,18 @@ def main():
     alfa = cv2.resize(m.astype(np.float32), (W, H), interpolation=cv2.INTER_LINEAR)
     alfa = cv2.GaussianBlur(alfa, (0, 0), 0.7)[..., None]
 
+    if foto is None:
+        alfa = alfa * 0  # sem foto: moldura vazia (template)
+        foto = np.zeros((1000, 1500, 3), np.uint8)
     larg, alt = (bx1 - bx0) * s, (by1 - by0) * s
-    f = nitidez(gradacao(preparar_foto(foto, larg, alt, a.corte_esquerda, a.corte_direita, a.estender)), a.nitidez)
+    f = nitidez(gradacao(preparar_foto(foto, larg, alt, a.corte_esquerda if a.foto else 0, a.corte_direita, a.estender)), a.nitidez)
     camada = np.zeros_like(base)
     camada[by0 * s:by1 * s, bx0 * s:bx1 * s] = f
 
     out = (camada * alfa + base * (1 - alfa)).astype(np.uint8)
     img = Image.fromarray(out)
+    if a.selo:
+        img = escrever_selo(img, a.selo, s)
     if a.texto:
         img = escrever_rodape(img, a.nome or "", a.texto, s, a.prefixo, a.logo)
 
