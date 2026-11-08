@@ -45,6 +45,10 @@ def mascara_moldura(tpl):
     if n:
         tam = nd.sum(furos, fl, range(1, n + 1))
         m |= np.isin(fl, 1 + np.where(tam < 3000)[0])
+    # expande até encostar no filete dourado (tolera templates recomprimidos/ruidosos),
+    # sem invadir o dourado nem os selos vermelhos
+    ouro = ((a[..., 0] - a[..., 2]) > 45) | (sat > 60)
+    m = nd.binary_dilation(m, iterations=6, mask=~ouro)
     m = nd.binary_dilation(m, iterations=1)  # cobre o pixel de antialias junto ao filete dourado
     return m
 
@@ -326,6 +330,8 @@ def main():
     ap.add_argument("--corte-direita", type=int, default=0)
     ap.add_argument("--estender", choices=["topo", "base"], default="topo",
                     help="lado completado se a foto for mais baixa que a moldura")
+    ap.add_argument("--mascara-de", help="template limpo com a MESMA moldura, usado só para detectar "
+                    "a área da foto (útil quando o template foi recomprimido/editado)")
     ap.add_argument("--limpar-rodape", action="store_true")
     ap.add_argument("--nome", help="nome em destaque no agradecimento")
     ap.add_argument("--texto", help="restante da mensagem de agradecimento")
@@ -341,7 +347,16 @@ def main():
     if a.selo:
         tpl = limpar_selo(tpl)
 
-    m = mascara_moldura(tpl)
+    if a.mascara_de:
+        ref = np.array(Image.open(a.mascara_de).convert("RGB"))
+        m = mascara_moldura(ref)
+        # na referência o selo pode ter outro tamanho: preserva o selo do template atual
+        t = tpl.astype(int)
+        selo = ((t[..., 0] - t[..., 1]) > 60) & ((t[..., 0] - t[..., 2]) > 50)
+        selo = nd.binary_dilation(selo, iterations=2)
+        m &= ~selo
+    else:
+        m = mascara_moldura(tpl)
     ys, xs = np.where(m)
     bx0, bx1, by0, by1 = xs.min(), xs.max() + 1, ys.min(), ys.max() + 1
 

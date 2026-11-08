@@ -10,6 +10,7 @@ Coloca uma foto do evento dentro da moldura do template oficial de agradecimento
 | `saida/noite-2-post-agradecimento.png` (+ `-1536x1024.jpg`) | **2ª noite** (Pe. César Dias), template próprio com a faixa "2ª Noite" sobre a foto |
 | `saida/noite-2-pascom-leo-moger.png` (+ `-1536x1024.jpg`) | **2ª noite, agradecimento da Pascom a Léo Moger**, com o logo da Pascom no rodapé |
 | `saida/festa-template-conego-osmar.png` (+ `-1536x1024.jpg`) | **Dia da Festa (08/11)**: template com moldura vazia, selo "Missa Solene" e agradecimento ao Côn. Osmar Júnior |
+| `saida/festa-post-conego-osmar.png` (+ `-1536x1024.jpg`) | **Post final da Festa**: foto dos padres com o Cônego no template enviado pela paróquia |
 | `saida/exemplo-texto-dinamico.png` | Exemplo do texto gerado pelo script (`--nome` / `--texto`) |
 
 ## Como a foto foi encaixada
@@ -47,6 +48,13 @@ python3 compor_post.py --template entrada/template-noite-2.png --foto entrada/FO
   --saida saida/festa-post-conego-osmar.png --selo "Missa Solene" --nome "Côn. Osmar Júnior" --logo entrada/logo-pascom.jpg \
   --texto "por presidir a Missa Solene da Festa da Sagrada Família, conduzindo nossa comunidade no amor, na comunhão e na missão." \
   --nitidez 1.4
+```
+
+Post final da Festa (template recomprimido → a área da foto vem do template limpo via `--mascara-de`):
+```bash
+python3 compor_post.py --template entrada/template-festa-conego-osmar.png --mascara-de entrada/template-noite-2.png \
+  --foto entrada/foto-festa-padres-conego.jpg --saida saida/festa-post-conego-osmar.png \
+  --corte-esquerda 280 --corte-direita 120 --estender base --nitidez 1.4
 ```
 
 Use `--limpar-rodape` para gerar sem texto e `--corte-esquerda N` para ajustar o enquadramento.
